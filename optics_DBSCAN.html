@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Milestone P3: Clustering using DBSCAN and its extension OPTICS &#8212; ADA - Milestone P2 - ADAmants</title>
+    <title>Clustering using DBSCAN and its extension OPTICS &#8212; ADA - Milestone P2 - ADAmants</title>
   
   
   
@@ -326,7 +326,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Milestone P3: Clustering using DBSCAN and its extension OPTICS</h1>
+    <h1>Clustering using DBSCAN and its extension OPTICS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -348,9 +348,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-umap-with-3-dimensions-for-visualization-purposes">Create a UMAP with 3 dimensions for visualization purposes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-the-results">Visualization of the results</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-the-results">Visualization of the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 </ul>
             </nav>
         </div>
@@ -362,8 +363,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="milestone-p3-clustering-using-dbscan-and-its-extension-optics">
-<h1>Milestone P3: Clustering using DBSCAN and its extension OPTICS<a class="headerlink" href="#milestone-p3-clustering-using-dbscan-and-its-extension-optics" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="clustering-using-dbscan-and-its-extension-optics">
+<span id="section-optics-and-dbscan"></span><h1>Clustering using DBSCAN and its extension OPTICS<a class="headerlink" href="#clustering-using-dbscan-and-its-extension-optics" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -917,8 +918,9 @@ document.write(`
 </div>
 <p>By providing a UMAP in 7 dimension to OPTICS we roughly find the communities that we can see by eye in the 3D UMAP</p>
 </section>
+</section>
 <section id="visualization-of-the-results">
-<h3>Visualization of the results<a class="headerlink" href="#visualization-of-the-results" title="Permalink to this heading">#</a></h3>
+<h2>Visualization of the results<a class="headerlink" href="#visualization-of-the-results" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot histogram features colored by cluster</span>
@@ -982,8 +984,10 @@ document.write(`
 <img alt="_images/3585328fcd1d1cdaae99d74846fc2d71a8443580250367175a2e4d48f6c536dc.png" src="_images/3585328fcd1d1cdaae99d74846fc2d71a8443580250367175a2e4d48f6c536dc.png" />
 </div>
 </div>
-<p>Here we can see that the clustering is less interesting. It really makes 4 clusters in which all the features used to do the clustering are either very low, low, high or very high.</p>
 </section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
+<p>Here we can see that the clustering is less interesting. It really makes 4 clusters in which all the features used to do the clustering are either very low, low, high or very high.</p>
 </section>
 </section>
 
@@ -1044,9 +1048,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-umap-with-3-dimensions-for-visualization-purposes">Create a UMAP with 3 dimensions for visualization purposes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-the-results">Visualization of the results</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-the-results">Visualization of the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 </ul>
   </nav></div>
 

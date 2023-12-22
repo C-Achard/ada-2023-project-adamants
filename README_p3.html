@@ -357,15 +357,12 @@ document.write(`
 <h2> Analyzing player strategies in the Wikispeedia game </h2>
 <section id="deliverables">
 <h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
+<p>In this project milestone, we have completed an extended exploration and visualisation of our data based on the principles discussed in milestone 2.</p>
 <ul class="simple">
-<li><p>Data story website : <a class="reference external" href="https://epfl-ada.github.io/ada-2023-project-adamants">LINK</a></p></li>
-<li><p>Jupyter Book for code and figures : <em>YOU ARE HERE</em></p></li>
-<li><p>Repository : <a class="reference external" href="https://github.com/epfl-ada/ada-2023-project-adamants">LINK</a></p></li>
+<li><p>From the features we previous gathered for milestone 2, we have tried multiple clustering methods, which we have visualised, compared, and then validated within <a class="reference external" href="https://c-achard.github.io/ada-2023-project-adamants/README_p3.html">this Jupyter book</a> (which you might already be reading). All of the code used in order to perform our analysis, and its associated outputs / results can also be found within.</p></li>
+<li><p>We have created an interactive, story-based exploration of our findings in a <a class="reference external" href="https://epfl-ada.github.io/ada-2023-project-adamants/">website-based</a> format. It summarises the essential components of our exploration and findings, in a fun and interesting way.</p></li>
+<li><p>In case you are looking for a way back, our repository is <a class="reference external" href="https://github.com/epfl-ada/ada-2023-project-adamants/tree/main">located here</a>.</p></li>
 </ul>
-<!-- TODO :
-- add deliverables link / repo structure
-- summarize the data story and explain what the code is for and where to find it
- -->
 </section>
 <hr class="docutils" />
 <section id="summary-of-previous-goals-milestone-p2">
@@ -384,19 +381,45 @@ To achieve this, we did the following:</p>
 <section id="features-used-for-clustering">
 <h2>Features used for clustering<a class="headerlink" href="#features-used-for-clustering" title="Permalink to this heading">#</a></h2>
 <p>To achieve this goal we came up with 10 different features that can either tell us about the entire path followed by the player, the path  of pages followed by the players or the players themselves. Then we will run clustering algorithms to discuss the different strategies used by these groups. Here is a list and a description of the different features extracted:</p>
-<ul class="simple">
-<li><p>duration in second: Time taken by the player to complete the path (directly provided in the dataset).</p></li>
-<li><p>backtrack: Number of backtracks made by the player in this path.</p></li>
-<li><p>numberOfPath: Number of paths previously played by the player, in total.</p></li>
-<li><p>position_mean: Character position of succeding clicked link on article page, averaged across all edges of path.</p></li>
-<li><p>position_std: Standard deviation of character position of succeding clicked link within a path.</p></li>
-<li><p>path_length: Simple measure of number of edges in path (pages clicked on) from beginning to end. Does not contains player backtracks, and so counts the final version of player path.</p></li>
-<li><p>coarse_mean_time: Measure of amount of time, on average, that the player took to travel from one edge to another in the path. It is called “coarse” because it is a global measure, that does not take into account outlier edges like the median could. This is especially noticeable on paths where the player disconnected, for example.</p></li>
-<li><p>semantic_similarity: This is a measure of the average similarity between two successive terms in the given path. The feature is calculated by computing the cosine similarity (normalised dot product) between embeddings (one-hot vectors projected to a lower dimensionality subspace) given by a sentence transformer, which is a model specifically trained in order to give embeddings which have “semantically relevant” / “semantically informative” relative positions. As such, the cosine similarity gives a measure of logical similarity of the words. A value of -1 represents opposite meanings / topics, around 0 means unrelated, and around 1 means highly similar meanings / topics. The mean of this is supposed to approximately capture how related topics globally were on a given path.</p></li>
-<li><p>ratio: The ratio between the user path and the shortest path between the start and end page.</p></li>
-<li><p>path_closeness_abs_sum : As each page in the path has a closeness centrality associated to it from the full network of Wikipedia, this features is obtained by looking at the derivative of the closeness centrality of each page in the path (that is, the delta between the closeness centrality of a page and the previous one in the path) and summing the absolute value of these deltas before and after the maximal degree page in the path.
-This is meant to quantify if the player is strongly looking for a hub page in the path, reaches it (as the maximal degree page is assumed to be a hub page) and then goesto a specific page from there, i.e. the target page. Indeed, a good player is expected to have a strongly positive delta before the maximal degree page and a strongly negative delta after it. We take the absolute value then sum them to have a single feature that aims at quantifying this behavior.</p></li>
-</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>durationInSec</p></td>
+<td><p>Time taken by the player to complete the path (directly provided in the dataset).</p></td>
+</tr>
+<tr class="row-odd"><td><p>backtrack</p></td>
+<td><p>Number of backtracks made by the player in this path.</p></td>
+</tr>
+<tr class="row-even"><td><p>numberOfPath</p></td>
+<td><p>Number of paths previously played by the player, in total.</p></td>
+</tr>
+<tr class="row-odd"><td><p>position_mean</p></td>
+<td><p>Character position of succeding clicked link on article page, averaged across all edges of path.</p></td>
+</tr>
+<tr class="row-even"><td><p>position_std</p></td>
+<td><p>Standard deviation of character position of succeding clicked link within a path.</p></td>
+</tr>
+<tr class="row-odd"><td><p>path_length</p></td>
+<td><p>Simple measure of number of edges in path (pages clicked on) from beginning to end. Does not contains player backtracks, and so counts the final version of player path.</p></td>
+</tr>
+<tr class="row-even"><td><p>coarse_mean_time</p></td>
+<td><p>Measure of amount of time, on average, that the player took to travel from one edge to another in the path. It is called “coarse” because it is a global measure, that does not take into account outlier edges like the median could. This is especially noticeable on paths where the player disconnected, for example.</p></td>
+</tr>
+<tr class="row-odd"><td><p>semantic_similarity</p></td>
+<td><p>This is a measure of the average similarity between two successive terms in the given path. The feature is calculated by computing the cosine similarity (normalised dot product) between embeddings (one-hot vectors projected to a lower dimensionality subspace) given by a sentence transformer, which is a model specifically trained in order to give embeddings which have “semantically relevant” / “semantically informative” relative positions. As such, the cosine similarity gives a measure of logical similarity of the words. A value of -1 represents opposite meanings / topics, around 0 means unrelated, and around 1 means highly similar meanings / topics. The mean of this is supposed to approximately capture how related topics globally were on a given path.</p></td>
+</tr>
+<tr class="row-even"><td><p>ratio</p></td>
+<td><p>The ratio between the user path and the shortest path between the start and end page.</p></td>
+</tr>
+<tr class="row-odd"><td><p>path_closeness_abs_sum</p></td>
+<td><p>As each page in the path has a closeness centrality associated to it from the full network of Wikipedia, this features is obtained by looking at the derivative of the closeness centrality of each page in the path (that is, the delta between the closeness centrality of a page and the previous one in the path) and summing the absolute value of these deltas before and after the maximal degree page in the path. <br />This is meant to quantify if the player is strongly looking for a hub page in the path, reaches it (as the maximal degree page is assumed to be a hub page) and then goes to a specific page from there, i.e. the target page. Indeed, a good player is expected to have a strongly positive delta before the maximal degree page and a strongly negative delta after it. We take the absolute value then sum them to have a single feature that aims at quantifying this behaviour.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <hr class="docutils" />
 <section id="clustering-code-and-figures">
