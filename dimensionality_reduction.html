@@ -1,0 +1,2094 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; ADA - Milestone P2 - ADAmants</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dimensionality_reduction';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="README_p3.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_cropped.png" class="logo__image only-light" alt="ADA - Milestone P2 - ADAmants - Home"/>
+    <script>document.write(`<img src="_static/logo_cropped.png" class="logo__image only-dark" alt="ADA - Milestone P2 - ADAmants - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README_p3.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="data_loading.html">Data loading and pre-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering.html">Leiden clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering_validation.html">Robustness of the Leiden clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering_w_timeouts.html">Clustering with the timeouts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hierarchical_and_gmm_clustering.html">Alternative clustering methods</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/epfl-ada/ada-2023-project-adamants" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/dimensionality_reduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
+<span class="kn">from</span> <span class="nn">umap</span> <span class="kn">import</span> <span class="n">umap_</span> <span class="k">as</span> <span class="n">UMAP</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DATA_PATH</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;../data&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Path</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">DATA_PATH</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;combined_*.csv&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;combined_metrics_finished_edges&#39;, &#39;combined_metrics_finished_paths&#39;, &#39;combined_metrics_unfinished_edges&#39;, &#39;combined_metrics_unfinished_paths&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_finished_paths</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;combined_metrics_finished_paths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">features_unfinished_paths</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;combined_metrics_unfinished_paths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span>
+    <span class="n">drop</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">features_finished_paths</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hashedIpAddress&quot;</span><span class="p">]))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">features_unfinished_paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>rating</th>
+      <th>backtrack</th>
+      <th>numberOfPath</th>
+      <th>path_length</th>
+      <th>coarse_mean_time</th>
+      <th>position_mean</th>
+      <th>...</th>
+      <th>optimal_path_length</th>
+      <th>average_time_on_page</th>
+      <th>sucessive_pairs</th>
+      <th>sucessive_pairs_encoded</th>
+      <th>semantic_similarity</th>
+      <th>path_degree_abs_sum</th>
+      <th>path_clustering_abs_sum</th>
+      <th>path_degree_centrality_abs_sum</th>
+      <th>path_betweenness_abs_sum</th>
+      <th>path_closeness_abs_sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6a3701d319fc3754</td>
+      <td>2011-02-15 03:26:49</td>
+      <td>166</td>
+      <td>['14th_century', '15th_century', '16th_century...</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>9</td>
+      <td>18.444444</td>
+      <td>0.284902</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.371901</td>
+      <td>[('14th_century', '15th_century'), ('15th_cent...</td>
+      <td>[0.8438330292701721, 0.8465813398361206, 0.265...</td>
+      <td>0.596161</td>
+      <td>5.197422</td>
+      <td>-3.233355</td>
+      <td>-3.234431</td>
+      <td>-5.004633</td>
+      <td>-2.964052</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3824310e536af032</td>
+      <td>2012-08-12 06:36:52</td>
+      <td>88</td>
+      <td>['14th_century', 'Europe', 'Africa', 'Atlantic...</td>
+      <td>3.0</td>
+      <td>0</td>
+      <td>13.0</td>
+      <td>5</td>
+      <td>17.600000</td>
+      <td>0.167841</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.313433</td>
+      <td>[('14th_century', 'Europe'), ('Europe', 'Afric...</td>
+      <td>[0.254788875579834, 0.6508224606513977, 0.3347...</td>
+      <td>0.528948</td>
+      <td>7.010212</td>
+      <td>-2.318889</td>
+      <td>-1.421642</td>
+      <td>-3.524030</td>
+      <td>-1.640078</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>415612e93584d30e</td>
+      <td>2012-10-03 21:10:40</td>
+      <td>138</td>
+      <td>['14th_century', 'Niger', 'Nigeria', 'British_...</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>19.0</td>
+      <td>8</td>
+      <td>17.250000</td>
+      <td>0.214077</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.422680</td>
+      <td>[('14th_century', 'Niger'), ('Niger', 'Nigeria...</td>
+      <td>[0.22429417073726654, 0.7818886637687683, 0.39...</td>
+      <td>0.488120</td>
+      <td>5.236336</td>
+      <td>-3.212821</td>
+      <td>-3.195518</td>
+      <td>-4.962358</td>
+      <td>-2.938361</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>64dd5cd342e3780c</td>
+      <td>2010-02-08 07:25:25</td>
+      <td>37</td>
+      <td>['14th_century', 'Renaissance', 'Ancient_Greec...</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>9.250000</td>
+      <td>0.223735</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.804348</td>
+      <td>[('14th_century', 'Renaissance'), ('Renaissanc...</td>
+      <td>[0.3987608551979065, 0.3302411735057831, 0.666...</td>
+      <td>0.465273</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>015245d773376aab</td>
+      <td>2013-04-23 15:27:08</td>
+      <td>175</td>
+      <td>['14th_century', 'Italy', 'Roman_Catholic_Chur...</td>
+      <td>3.0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>25.000000</td>
+      <td>0.316027</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.666667</td>
+      <td>[('14th_century', 'Italy'), ('Italy', 'Roman_C...</td>
+      <td>[0.1762578785419464, 0.3073163628578186, 0.214...</td>
+      <td>0.333869</td>
+      <td>6.315864</td>
+      <td>-2.737924</td>
+      <td>-2.115989</td>
+      <td>-4.991059</td>
+      <td>-2.013457</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51304</th>
+      <td>15a13a1d66ef5456</td>
+      <td>2012-10-03 02:23:35</td>
+      <td>66</td>
+      <td>['Yagan', 'Ancient_Egypt', 'Civilization']</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>22.000000</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>2.062500</td>
+      <td>[('Yagan', 'Ancient_Egypt'), ('Ancient_Egypt',...</td>
+      <td>[0.17201459407806396, 0.40563249588012695]</td>
+      <td>0.288824</td>
+      <td>5.209486</td>
+      <td>-2.320631</td>
+      <td>-3.222367</td>
+      <td>-5.666352</td>
+      <td>-1.732727</td>
+    </tr>
+    <tr>
+      <th>51305</th>
+      <td>2ef7ac844cefda58</td>
+      <td>2011-03-16 05:42:18</td>
+      <td>165</td>
+      <td>['Yagan', 'Folklore', 'Brothers_Grimm', '19th_...</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>8</td>
+      <td>18.333333</td>
+      <td>0.346339</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.833333</td>
+      <td>[('Yagan', 'Folklore'), ('Folklore', 'Brothers...</td>
+      <td>[0.2101505994796753, 0.29172447323799133, 0.24...</td>
+      <td>0.346520</td>
+      <td>4.297096</td>
+      <td>-4.423940</td>
+      <td>-4.134757</td>
+      <td>-5.967147</td>
+      <td>-3.460478</td>
+    </tr>
+    <tr>
+      <th>51306</th>
+      <td>12863abb7887f890</td>
+      <td>2013-11-22 04:42:52</td>
+      <td>228</td>
+      <td>['Yagan', 'Australia', 'England', 'France', 'U...</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>7</td>
+      <td>32.571429</td>
+      <td>0.151467</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>3.081081</td>
+      <td>[('Yagan', 'Australia'), ('Australia', 'Englan...</td>
+      <td>[0.12989795207977295, 0.7208417654037476, 0.62...</td>
+      <td>0.396291</td>
+      <td>6.343111</td>
+      <td>-2.115506</td>
+      <td>-2.088742</td>
+      <td>-3.527183</td>
+      <td>-2.438024</td>
+    </tr>
+    <tr>
+      <th>51307</th>
+      <td>19f8284371753362</td>
+      <td>2011-02-27 07:42:47</td>
+      <td>56</td>
+      <td>['Yarralumla%2C_Australian_Capital_Territory',...</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>8.0</td>
+      <td>4</td>
+      <td>14.000000</td>
+      <td>0.153554</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.682927</td>
+      <td>[('Yarralumla%2C_Australian_Capital_Territory'...</td>
+      <td>[0.4492543637752533, 0.41598689556121826, 0.44...</td>
+      <td>0.436014</td>
+      <td>7.695758</td>
+      <td>-1.820454</td>
+      <td>-0.736095</td>
+      <td>-2.147011</td>
+      <td>-1.268453</td>
+    </tr>
+    <tr>
+      <th>51308</th>
+      <td>24b84602179de377</td>
+      <td>2011-10-09 01:11:41</td>
+      <td>30</td>
+      <td>['Ziad_Jarrah', 'Germany', 'Jew']</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>10.000000</td>
+      <td>0.201319</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>1.304348</td>
+      <td>[('Ziad_Jarrah', 'Germany'), ('Germany', 'Jew')]</td>
+      <td>[0.11018936336040497, 0.3047122359275818]</td>
+      <td>0.207451</td>
+      <td>7.275172</td>
+      <td>-1.595770</td>
+      <td>-1.156681</td>
+      <td>-3.333625</td>
+      <td>-1.172824</td>
+    </tr>
+  </tbody>
+</table>
+<p>51306 rows × 21 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>target</th>
+      <th>type</th>
+      <th>backtrack</th>
+      <th>numberOfPath</th>
+      <th>path_length</th>
+      <th>...</th>
+      <th>optimal_path_length</th>
+      <th>average_time_on_page</th>
+      <th>sucessive_pairs</th>
+      <th>sucessive_pairs_encoded</th>
+      <th>semantic_similarity</th>
+      <th>path_degree_abs_sum</th>
+      <th>path_clustering_abs_sum</th>
+      <th>path_degree_centrality_abs_sum</th>
+      <th>path_betweenness_abs_sum</th>
+      <th>path_closeness_abs_sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>2b015fb8181c48f2</td>
+      <td>2011-02-07 15:00:19</td>
+      <td>1818</td>
+      <td>['Malawi', 'Democracy', 'Alexander_the_Great']</td>
+      <td>First_Crusade</td>
+      <td>timeout</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>3</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>50.500000</td>
+      <td>[('Malawi', 'Democracy'), ('Democracy', 'Alexa...</td>
+      <td>[0.3289797902107239, 0.15958838164806366]</td>
+      <td>0.244284</td>
+      <td>4.624973</td>
+      <td>-1.658146</td>
+      <td>-3.806880</td>
+      <td>-6.527886</td>
+      <td>-2.041349</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>53a53bc244e08a6a</td>
+      <td>2011-02-07 17:18:25</td>
+      <td>1808</td>
+      <td>['Paraguay', 'Bolivia']</td>
+      <td>Mount_St._Helens</td>
+      <td>timeout</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>113.000000</td>
+      <td>[('Paraguay', 'Bolivia')]</td>
+      <td>[0.7933145761489868]</td>
+      <td>0.793315</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>131600803df4895e</td>
+      <td>2011-02-07 17:42:37</td>
+      <td>2009</td>
+      <td>['Agriculture', 'History_of_the_world', 'China...</td>
+      <td>Grand_Canal_of_China</td>
+      <td>timeout</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>4</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>38.634615</td>
+      <td>[('Agriculture', 'History_of_the_world'), ('Hi...</td>
+      <td>[0.26539474725723267, 0.2245648205280304, 0.37...</td>
+      <td>0.288841</td>
+      <td>6.429719</td>
+      <td>-1.952055</td>
+      <td>-2.002134</td>
+      <td>-4.467183</td>
+      <td>-1.925200</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
+      <td>486bb79910fe9dd2</td>
+      <td>2011-02-07 18:01:00</td>
+      <td>1932</td>
+      <td>['Mind', 'Christianity', 'Europe', 'Renaissanc...</td>
+      <td>Scouting</td>
+      <td>timeout</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>28.411765</td>
+      <td>[('Mind', 'Christianity'), ('Christianity', 'E...</td>
+      <td>[0.23058123886585236, 0.3337669372558594, 0.30...</td>
+      <td>0.376883</td>
+      <td>5.705032</td>
+      <td>-3.544534</td>
+      <td>-2.726821</td>
+      <td>-4.845663</td>
+      <td>-2.936609</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7</td>
+      <td>6d136e371e42474f</td>
+      <td>2011-02-07 18:07:50</td>
+      <td>175</td>
+      <td>['4-2-0', 'United_States', 'Agriculture', 'Sug...</td>
+      <td>Cane_Toad</td>
+      <td>restart</td>
+      <td>0</td>
+      <td>170.0</td>
+      <td>5</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>3.723404</td>
+      <td>[('4-2-0', 'United_States'), ('United_States',...</td>
+      <td>[0.19640374183654785, 0.23717810213565826, 0.3...</td>
+      <td>0.245052</td>
+      <td>7.585732</td>
+      <td>-2.590255</td>
+      <td>-0.846121</td>
+      <td>-2.271594</td>
+      <td>-0.927471</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>19647</th>
+      <td>24869</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:00:12</td>
+      <td>182</td>
+      <td>['Turks_and_Caicos_Islands', 'United_States', ...</td>
+      <td>Iraq_War</td>
+      <td>restart</td>
+      <td>0</td>
+      <td>35.0</td>
+      <td>6</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>2.527778</td>
+      <td>[('Turks_and_Caicos_Islands', 'United_States')...</td>
+      <td>[0.4149491488933563, 0.40031805634498596, 0.39...</td>
+      <td>0.421867</td>
+      <td>7.555088</td>
+      <td>-1.505405</td>
+      <td>-0.876766</td>
+      <td>-2.304742</td>
+      <td>-1.574654</td>
+    </tr>
+    <tr>
+      <th>19648</th>
+      <td>24870</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:06:45</td>
+      <td>180</td>
+      <td>['Franz_Kafka', 'Tuberculosis', 'World_Health_...</td>
+      <td>Cholera</td>
+      <td>restart</td>
+      <td>1</td>
+      <td>37.0</td>
+      <td>7</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.894737</td>
+      <td>[('Franz_Kafka', 'Tuberculosis'), ('Tuberculos...</td>
+      <td>[0.2173137366771698, 0.34790855646133423, 0.42...</td>
+      <td>0.358657</td>
+      <td>3.669951</td>
+      <td>-3.305998</td>
+      <td>-4.761902</td>
+      <td>-7.644179</td>
+      <td>-4.383847</td>
+    </tr>
+    <tr>
+      <th>19649</th>
+      <td>24872</td>
+      <td>2e09a7224600a7cd</td>
+      <td>2014-01-15 15:06:40</td>
+      <td>1900</td>
+      <td>['Computer_programming', 'Linguistics', 'Cultu...</td>
+      <td>The_Beatles</td>
+      <td>timeout</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>4</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>33.928571</td>
+      <td>[('Computer_programming', 'Linguistics'), ('Li...</td>
+      <td>[0.2608160674571991, 0.5456496477127075, 0.600...</td>
+      <td>0.468859</td>
+      <td>4.760035</td>
+      <td>-2.802979</td>
+      <td>-3.671818</td>
+      <td>-6.478384</td>
+      <td>-2.157703</td>
+    </tr>
+    <tr>
+      <th>19650</th>
+      <td>24873</td>
+      <td>60af9e2138051b96</td>
+      <td>2014-01-15 15:24:41</td>
+      <td>1903</td>
+      <td>['Jamaica', 'United_Kingdom', 'World_War_II', ...</td>
+      <td>Alan_Turing</td>
+      <td>timeout</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>4</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>36.596154</td>
+      <td>[('Jamaica', 'United_Kingdom'), ('United_Kingd...</td>
+      <td>[0.39752137660980225, 0.3371908664703369, 0.42...</td>
+      <td>0.387896</td>
+      <td>7.158709</td>
+      <td>-1.836719</td>
+      <td>-1.273145</td>
+      <td>-2.951980</td>
+      <td>-1.724655</td>
+    </tr>
+    <tr>
+      <th>19651</th>
+      <td>24874</td>
+      <td>1cf0cbb3281049ab</td>
+      <td>2014-01-15 21:54:01</td>
+      <td>352</td>
+      <td>['Mark_Antony', 'Rome', 'Tennis', 'Hawk-Eye', ...</td>
+      <td>Feather</td>
+      <td>restart</td>
+      <td>0</td>
+      <td>49.0</td>
+      <td>5</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>8.585366</td>
+      <td>[('Mark_Antony', 'Rome'), ('Rome', 'Tennis'), ...</td>
+      <td>[0.2700643837451935, 0.28349533677101135, 0.21...</td>
+      <td>0.237981</td>
+      <td>5.595124</td>
+      <td>-1.730546</td>
+      <td>-2.836729</td>
+      <td>-5.768889</td>
+      <td>-2.107167</td>
+    </tr>
+  </tbody>
+</table>
+<p>19652 rows × 23 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_finished_paths</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;hashedIpAddress&#39;, &#39;timestamp&#39;, &#39;durationInSec&#39;, &#39;path&#39;, &#39;rating&#39;,
+       &#39;backtrack&#39;, &#39;numberOfPath&#39;, &#39;path_length&#39;, &#39;coarse_mean_time&#39;,
+       &#39;position_mean&#39;, &#39;position_std&#39;, &#39;optimal_path_length&#39;,
+       &#39;average_time_on_page&#39;, &#39;sucessive_pairs&#39;, &#39;sucessive_pairs_encoded&#39;,
+       &#39;semantic_similarity&#39;, &#39;path_degree_abs_sum&#39;, &#39;path_clustering_abs_sum&#39;,
+       &#39;path_degree_centrality_abs_sum&#39;, &#39;path_betweenness_abs_sum&#39;,
+       &#39;path_closeness_abs_sum&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_cols_used_for_clustering</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;durationInSec&quot;</span><span class="p">,</span>
+    <span class="c1">#   &#39;rating_x&#39;,</span>
+    <span class="s2">&quot;backtrack&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;numberOfPath&quot;</span><span class="p">,</span>
+    <span class="c1"># &quot;link_position&quot;,</span>
+    <span class="s2">&quot;position_mean&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;position_std&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path_length&quot;</span><span class="p">,</span>
+    <span class="c1">#  &#39;optimal_path_length&#39;,</span>
+    <span class="s2">&quot;coarse_mean_time&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;semantic_similarity&quot;</span><span class="p">,</span>
+    <span class="c1"># &quot;path_degree_abs_sum&quot;,</span>
+    <span class="c1"># &quot;path_clustering_abs_sum&quot;,</span>
+    <span class="c1"># &#39;path_degree_centrality_abs_sum&#39;,</span>
+    <span class="c1"># &#39;path_betweenness_abs_sum&#39;,</span>
+    <span class="s1">&#39;path_closeness_abs_sum&#39;</span>
+    
+<span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">features_cols_used_for_clustering</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols_replace_nan_with_mean</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># cols where nan values are replaced with mean of the column</span>
+<span class="c1">#     &quot;path_degree_slope_before&quot;,</span>
+<span class="c1">#     &quot;path_degree_slope_after&quot;,</span>
+<span class="c1">#     &quot;path_clustering_slope_before&quot;,</span>
+<span class="c1">#     &quot;path_clustering_slope_after&quot;,</span>
+<span class="c1">#     &quot;path_degree_centrality_slope_before&quot;,</span>
+<span class="c1">#     &quot;path_degree_centrality_slope_after&quot;,</span>
+<span class="c1">#     &quot;path_betweenness_slope_before&quot;,</span>
+<span class="c1">#     &quot;path_betweenness_slope_after&quot;,</span>
+<span class="c1">#     &quot;path_closeness_slope_before&quot;,</span>
+<span class="c1">#     &quot;path_closeness_slope_after&quot;,</span>
+    <span class="s2">&quot;path_degree_abs_sum&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path_clustering_abs_sum&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;path_degree_centrality_abs_sum&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;path_betweenness_abs_sum&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;path_closeness_abs_sum&#39;</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">replace_nan_with_mean</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="k">def</span> <span class="nf">replace_value_with_mean</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">features_finished_paths_replaced</span> <span class="o">=</span> <span class="n">replace_nan_with_mean</span><span class="p">(</span>
+    <span class="n">features_finished_paths</span><span class="p">,</span> <span class="n">cols_replace_nan_with_mean</span>
+<span class="p">)</span>
+<span class="n">features_unfinished_paths_replaced</span> <span class="o">=</span> <span class="n">replace_nan_with_mean</span><span class="p">(</span>
+    <span class="n">features_unfinished_paths</span><span class="p">,</span> <span class="n">cols_replace_nan_with_mean</span>
+<span class="p">)</span>
+<span class="n">features_finished_paths_replaced</span> <span class="o">=</span> <span class="n">features_finished_paths</span>
+<span class="n">features_unfinished_paths_replaced</span> <span class="o">=</span> <span class="n">features_unfinished_paths</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols_log</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># cols to apply log transformation</span>
+    <span class="s2">&quot;durationInSec&quot;</span><span class="p">,</span>
+    <span class="c1">#   &#39;rating_x&#39;,</span>
+    <span class="c1"># &quot;backtrack&quot;,</span>
+    <span class="s2">&quot;numberOfPath&quot;</span><span class="p">,</span>
+    <span class="c1"># &quot;link_position&quot;,</span>
+    <span class="s2">&quot;path_length&quot;</span><span class="p">,</span>
+    <span class="c1">#  &#39;optimal_path_length&#39;,</span>
+    <span class="s2">&quot;coarse_mean_time&quot;</span><span class="p">,</span>
+    <span class="c1"># &quot;semantic_similarity&quot;,</span>
+    <span class="c1"># &quot;path_degree_slope_before&quot;,</span>
+    <span class="c1"># &quot;path_degree_slope_after&quot;,</span>
+    <span class="c1"># &quot;path_clustering_slope_before&quot;,</span>
+    <span class="c1"># &quot;path_clustering_slope_after&quot;,</span>
+    <span class="c1"># &quot;path_degree_centrality_slope_before&quot;,</span>
+    <span class="c1"># &quot;path_degree_centrality_slope_after&quot;,</span>
+    <span class="c1"># &quot;path_betweenness_slope_before&quot;,</span>
+    <span class="c1"># &quot;path_betweenness_slope_after&quot;,</span>
+    <span class="c1"># &quot;path_closeness_slope_before&quot;,</span>
+    <span class="c1"># &quot;path_closeness_slope_after&quot;,</span>
+<span class="p">]</span>
+<span class="n">features_finished_paths_replaced_log</span> <span class="o">=</span> <span class="n">features_finished_paths_replaced</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">features_finished_paths_replaced_log</span><span class="p">[</span><span class="n">cols_log</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">features_finished_paths_replaced_log</span><span class="p">[</span><span class="n">cols_log</span><span class="p">])</span>
+<span class="n">features_unfinished_paths_replaced_log</span> <span class="o">=</span> <span class="n">features_unfinished_paths_replaced</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">features_unfinished_paths_replaced_log</span><span class="p">[</span><span class="n">cols_log</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">features_unfinished_paths_replaced_log</span><span class="p">[</span><span class="n">cols_log</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># z-score all features columns</span>
+<span class="n">features_finished_paths_zscore</span> <span class="o">=</span> <span class="n">features_finished_paths_replaced_log</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">features_finished_paths_zscore</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span> <span class="o">=</span> <span class="n">features_finished_paths_zscore</span><span class="p">[</span>
+    <span class="n">features_cols_used_for_clustering</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">features_finished_paths_zscore</span><span class="p">)</span>
+
+<span class="n">features_unfinished_paths_zscore</span> <span class="o">=</span> <span class="n">features_unfinished_paths_replaced_log</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">features_unfinished_paths_zscore</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span> <span class="o">=</span> <span class="n">features_unfinished_paths_zscore</span><span class="p">[</span>
+    <span class="n">features_cols_used_for_clustering</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">features_unfinished_paths_zscore</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>rating</th>
+      <th>backtrack</th>
+      <th>numberOfPath</th>
+      <th>path_length</th>
+      <th>coarse_mean_time</th>
+      <th>position_mean</th>
+      <th>...</th>
+      <th>optimal_path_length</th>
+      <th>average_time_on_page</th>
+      <th>sucessive_pairs</th>
+      <th>sucessive_pairs_encoded</th>
+      <th>semantic_similarity</th>
+      <th>path_degree_abs_sum</th>
+      <th>path_clustering_abs_sum</th>
+      <th>path_degree_centrality_abs_sum</th>
+      <th>path_betweenness_abs_sum</th>
+      <th>path_closeness_abs_sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6a3701d319fc3754</td>
+      <td>2011-02-15 03:26:49</td>
+      <td>0.525935</td>
+      <td>['14th_century', '15th_century', '16th_century...</td>
+      <td>NaN</td>
+      <td>-0.276111</td>
+      <td>-0.427809</td>
+      <td>1.072539</td>
+      <td>0.107413</td>
+      <td>0.087182</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.371901</td>
+      <td>[('14th_century', '15th_century'), ('15th_cent...</td>
+      <td>[0.8438330292701721, 0.8465813398361206, 0.265...</td>
+      <td>1.906754</td>
+      <td>5.197422</td>
+      <td>-3.233355</td>
+      <td>-3.234431</td>
+      <td>-5.004633</td>
+      <td>-0.445707</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3824310e536af032</td>
+      <td>2012-08-12 06:36:52</td>
+      <td>-0.173342</td>
+      <td>['14th_century', 'Europe', 'Africa', 'Atlantic...</td>
+      <td>3.0</td>
+      <td>-0.276111</td>
+      <td>0.233284</td>
+      <td>-0.359181</td>
+      <td>0.037613</td>
+      <td>-0.533082</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.313433</td>
+      <td>[('14th_century', 'Europe'), ('Europe', 'Afric...</td>
+      <td>[0.254788875579834, 0.6508224606513977, 0.3347...</td>
+      <td>1.159513</td>
+      <td>7.010212</td>
+      <td>-2.318889</td>
+      <td>-1.421642</td>
+      <td>-3.524030</td>
+      <td>0.923916</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>415612e93584d30e</td>
+      <td>2012-10-03 21:10:40</td>
+      <td>0.322389</td>
+      <td>['14th_century', 'Niger', 'Nigeria', 'British_...</td>
+      <td>NaN</td>
+      <td>-0.276111</td>
+      <td>0.404376</td>
+      <td>0.785645</td>
+      <td>0.007696</td>
+      <td>-0.288094</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.422680</td>
+      <td>[('14th_century', 'Niger'), ('Niger', 'Nigeria...</td>
+      <td>[0.22429417073726654, 0.7818886637687683, 0.39...</td>
+      <td>0.705604</td>
+      <td>5.236336</td>
+      <td>-3.212821</td>
+      <td>-3.195518</td>
+      <td>-4.962358</td>
+      <td>-0.419131</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>64dd5cd342e3780c</td>
+      <td>2010-02-08 07:25:25</td>
+      <td>-1.127988</td>
+      <td>['14th_century', 'Renaissance', 'Ancient_Greec...</td>
+      <td>NaN</td>
+      <td>-0.276111</td>
+      <td>-0.610612</td>
+      <td>-0.902711</td>
+      <td>-0.920490</td>
+      <td>-0.236922</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.804348</td>
+      <td>[('14th_century', 'Renaissance'), ('Renaissanc...</td>
+      <td>[0.3987608551979065, 0.3302411735057831, 0.666...</td>
+      <td>0.451605</td>
+      <td>5.727391</td>
+      <td>-2.924257</td>
+      <td>-2.704462</td>
+      <td>-4.896963</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>015245d773376aab</td>
+      <td>2013-04-23 15:27:08</td>
+      <td>0.584109</td>
+      <td>['14th_century', 'Italy', 'Roman_Catholic_Chur...</td>
+      <td>3.0</td>
+      <td>-0.276111</td>
+      <td>-0.923115</td>
+      <td>0.460392</td>
+      <td>0.560363</td>
+      <td>0.252102</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.666667</td>
+      <td>[('14th_century', 'Italy'), ('Italy', 'Roman_C...</td>
+      <td>[0.1762578785419464, 0.3073163628578186, 0.214...</td>
+      <td>-1.009289</td>
+      <td>6.315864</td>
+      <td>-2.737924</td>
+      <td>-2.115989</td>
+      <td>-4.991059</td>
+      <td>0.537664</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51304</th>
+      <td>15a13a1d66ef5456</td>
+      <td>2012-10-03 02:23:35</td>
+      <td>-0.490319</td>
+      <td>['Yagan', 'Ancient_Egypt', 'Civilization']</td>
+      <td>NaN</td>
+      <td>-0.276111</td>
+      <td>-0.427809</td>
+      <td>-1.603442</td>
+      <td>0.369966</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>2.062500</td>
+      <td>[('Yagan', 'Ancient_Egypt'), ('Ancient_Egypt',...</td>
+      <td>[0.17201459407806396, 0.40563249588012695]</td>
+      <td>-1.510087</td>
+      <td>5.209486</td>
+      <td>-2.320631</td>
+      <td>-3.222367</td>
+      <td>-5.666352</td>
+      <td>0.828073</td>
+    </tr>
+    <tr>
+      <th>51305</th>
+      <td>2ef7ac844cefda58</td>
+      <td>2011-03-16 05:42:18</td>
+      <td>0.519277</td>
+      <td>['Yagan', 'Folklore', 'Brothers_Grimm', '19th_...</td>
+      <td>3.0</td>
+      <td>0.412911</td>
+      <td>-0.045808</td>
+      <td>0.785645</td>
+      <td>0.098414</td>
+      <td>0.412718</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.833333</td>
+      <td>[('Yagan', 'Folklore'), ('Folklore', 'Brothers...</td>
+      <td>[0.2101505994796753, 0.29172447323799133, 0.24...</td>
+      <td>-0.868646</td>
+      <td>4.297096</td>
+      <td>-4.423940</td>
+      <td>-4.134757</td>
+      <td>-5.967147</td>
+      <td>-0.959250</td>
+    </tr>
+    <tr>
+      <th>51306</th>
+      <td>12863abb7887f890</td>
+      <td>2013-11-22 04:42:52</td>
+      <td>0.875609</td>
+      <td>['Yagan', 'Australia', 'England', 'France', 'U...</td>
+      <td>NaN</td>
+      <td>-0.276111</td>
+      <td>-0.610612</td>
+      <td>0.460392</td>
+      <td>0.954402</td>
+      <td>-0.619844</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>3.081081</td>
+      <td>[('Yagan', 'Australia'), ('Australia', 'Englan...</td>
+      <td>[0.12989795207977295, 0.7208417654037476, 0.62...</td>
+      <td>-0.315312</td>
+      <td>6.343111</td>
+      <td>-2.115506</td>
+      <td>-2.088742</td>
+      <td>-3.527183</td>
+      <td>0.098457</td>
+    </tr>
+    <tr>
+      <th>51307</th>
+      <td>19f8284371753362</td>
+      <td>2011-02-27 07:42:47</td>
+      <td>-0.671353</td>
+      <td>['Yarralumla%2C_Australian_Capital_Territory',...</td>
+      <td>1.0</td>
+      <td>-0.276111</td>
+      <td>0.014395</td>
+      <td>-0.902711</td>
+      <td>-0.303227</td>
+      <td>-0.608784</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.682927</td>
+      <td>[('Yarralumla%2C_Australian_Capital_Territory'...</td>
+      <td>[0.4492543637752533, 0.41598689556121826, 0.44...</td>
+      <td>0.126309</td>
+      <td>7.695758</td>
+      <td>-1.820454</td>
+      <td>-0.736095</td>
+      <td>-2.147011</td>
+      <td>1.308354</td>
+    </tr>
+    <tr>
+      <th>51308</th>
+      <td>24b84602179de377</td>
+      <td>2011-10-09 01:11:41</td>
+      <td>-1.359064</td>
+      <td>['Ziad_Jarrah', 'Germany', 'Jew']</td>
+      <td>NaN</td>
+      <td>-0.276111</td>
+      <td>-0.427809</td>
+      <td>-1.603442</td>
+      <td>-0.804373</td>
+      <td>-0.355693</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>1.304348</td>
+      <td>[('Ziad_Jarrah', 'Germany'), ('Germany', 'Jew')]</td>
+      <td>[0.11018936336040497, 0.3047122359275818]</td>
+      <td>-2.414753</td>
+      <td>7.275172</td>
+      <td>-1.595770</td>
+      <td>-1.156681</td>
+      <td>-3.333625</td>
+      <td>1.407281</td>
+    </tr>
+  </tbody>
+</table>
+<p>51309 rows × 21 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>target</th>
+      <th>type</th>
+      <th>backtrack</th>
+      <th>numberOfPath</th>
+      <th>path_length</th>
+      <th>...</th>
+      <th>optimal_path_length</th>
+      <th>average_time_on_page</th>
+      <th>sucessive_pairs</th>
+      <th>sucessive_pairs_encoded</th>
+      <th>semantic_similarity</th>
+      <th>path_degree_abs_sum</th>
+      <th>path_clustering_abs_sum</th>
+      <th>path_degree_centrality_abs_sum</th>
+      <th>path_betweenness_abs_sum</th>
+      <th>path_closeness_abs_sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>2b015fb8181c48f2</td>
+      <td>2011-02-07 15:00:19</td>
+      <td>1.087068</td>
+      <td>['Malawi', 'Democracy', 'Alexander_the_Great']</td>
+      <td>First_Crusade</td>
+      <td>timeout</td>
+      <td>-0.323962</td>
+      <td>-0.971356</td>
+      <td>-0.715136</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>50.500000</td>
+      <td>[('Malawi', 'Democracy'), ('Democracy', 'Alexa...</td>
+      <td>[0.3289797902107239, 0.15958838164806366]</td>
+      <td>-1.339492</td>
+      <td>4.624973</td>
+      <td>-1.658146</td>
+      <td>-3.806880</td>
+      <td>-6.527886</td>
+      <td>0.633243</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>53a53bc244e08a6a</td>
+      <td>2011-02-07 17:18:25</td>
+      <td>1.083233</td>
+      <td>['Paraguay', 'Bolivia']</td>
+      <td>Mount_St._Helens</td>
+      <td>timeout</td>
+      <td>-0.323962</td>
+      <td>-0.971356</td>
+      <td>-1.386563</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>113.000000</td>
+      <td>[('Paraguay', 'Bolivia')]</td>
+      <td>[0.7933145761489868]</td>
+      <td>3.595005</td>
+      <td>5.683793</td>
+      <td>-3.118998</td>
+      <td>-2.748061</td>
+      <td>-4.922750</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>131600803df4895e</td>
+      <td>2011-02-07 17:42:37</td>
+      <td>1.156516</td>
+      <td>['Agriculture', 'History_of_the_world', 'China...</td>
+      <td>Grand_Canal_of_China</td>
+      <td>timeout</td>
+      <td>-0.323962</td>
+      <td>-0.971356</td>
+      <td>-0.238750</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>38.634615</td>
+      <td>[('Agriculture', 'History_of_the_world'), ('Hi...</td>
+      <td>[0.26539474725723267, 0.2245648205280304, 0.37...</td>
+      <td>-0.939028</td>
+      <td>6.429719</td>
+      <td>-1.952055</td>
+      <td>-2.002134</td>
+      <td>-4.467183</td>
+      <td>0.759830</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
+      <td>486bb79910fe9dd2</td>
+      <td>2011-02-07 18:01:00</td>
+      <td>1.129347</td>
+      <td>['Mind', 'Christianity', 'Europe', 'Renaissanc...</td>
+      <td>Scouting</td>
+      <td>timeout</td>
+      <td>-0.323962</td>
+      <td>-0.971356</td>
+      <td>0.687943</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>28.411765</td>
+      <td>[('Mind', 'Christianity'), ('Christianity', 'E...</td>
+      <td>[0.23058123886585236, 0.3337669372558594, 0.30...</td>
+      <td>-0.147735</td>
+      <td>5.705032</td>
+      <td>-3.544534</td>
+      <td>-2.726821</td>
+      <td>-4.845663</td>
+      <td>-0.342470</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7</td>
+      <td>6d136e371e42474f</td>
+      <td>2011-02-07 18:07:50</td>
+      <td>-0.540139</td>
+      <td>['4-2-0', 'United_States', 'Agriculture', 'Sug...</td>
+      <td>Cane_Toad</td>
+      <td>restart</td>
+      <td>-0.323962</td>
+      <td>3.019836</td>
+      <td>0.130764</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>3.723404</td>
+      <td>[('4-2-0', 'United_States'), ('United_States',...</td>
+      <td>[0.19640374183654785, 0.23717810213565826, 0.3...</td>
+      <td>-1.332590</td>
+      <td>7.585732</td>
+      <td>-2.590255</td>
+      <td>-0.846121</td>
+      <td>-2.271594</td>
+      <td>1.847221</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>19647</th>
+      <td>24869</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:00:12</td>
+      <td>-0.512874</td>
+      <td>['Turks_and_Caicos_Islands', 'United_States', ...</td>
+      <td>Iraq_War</td>
+      <td>restart</td>
+      <td>-0.323962</td>
+      <td>1.791618</td>
+      <td>0.432678</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>2.527778</td>
+      <td>[('Turks_and_Caicos_Islands', 'United_States')...</td>
+      <td>[0.4149491488933563, 0.40031805634498596, 0.39...</td>
+      <td>0.256562</td>
+      <td>7.555088</td>
+      <td>-1.505405</td>
+      <td>-0.876766</td>
+      <td>-2.304742</td>
+      <td>1.141878</td>
+    </tr>
+    <tr>
+      <th>19648</th>
+      <td>24870</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:06:45</td>
+      <td>-0.520555</td>
+      <td>['Franz_Kafka', 'Tuberculosis', 'World_Health_...</td>
+      <td>Cholera</td>
+      <td>restart</td>
+      <td>0.169336</td>
+      <td>1.834803</td>
+      <td>0.687943</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.894737</td>
+      <td>[('Franz_Kafka', 'Tuberculosis'), ('Tuberculos...</td>
+      <td>[0.2173137366771698, 0.34790855646133423, 0.42...</td>
+      <td>-0.311545</td>
+      <td>3.669951</td>
+      <td>-3.305998</td>
+      <td>-4.761902</td>
+      <td>-7.644179</td>
+      <td>-1.919766</td>
+    </tr>
+    <tr>
+      <th>19649</th>
+      <td>24872</td>
+      <td>2e09a7224600a7cd</td>
+      <td>2014-01-15 15:06:40</td>
+      <td>1.117737</td>
+      <td>['Computer_programming', 'Linguistics', 'Cultu...</td>
+      <td>The_Beatles</td>
+      <td>timeout</td>
+      <td>0.169336</td>
+      <td>0.279389</td>
+      <td>-0.238750</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>33.928571</td>
+      <td>[('Computer_programming', 'Linguistics'), ('Li...</td>
+      <td>[0.2608160674571991, 0.5456496477127075, 0.600...</td>
+      <td>0.678910</td>
+      <td>4.760035</td>
+      <td>-2.802979</td>
+      <td>-3.671818</td>
+      <td>-6.478384</td>
+      <td>0.506433</td>
+    </tr>
+    <tr>
+      <th>19650</th>
+      <td>24873</td>
+      <td>60af9e2138051b96</td>
+      <td>2014-01-15 15:24:41</td>
+      <td>1.118833</td>
+      <td>['Jamaica', 'United_Kingdom', 'World_War_II', ...</td>
+      <td>Alan_Turing</td>
+      <td>timeout</td>
+      <td>-0.323962</td>
+      <td>-0.971356</td>
+      <td>-0.238750</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>36.596154</td>
+      <td>[('Jamaica', 'United_Kingdom'), ('United_Kingd...</td>
+      <td>[0.39752137660980225, 0.3371908664703369, 0.42...</td>
+      <td>-0.048755</td>
+      <td>7.158709</td>
+      <td>-1.836719</td>
+      <td>-1.273145</td>
+      <td>-2.951980</td>
+      <td>0.978396</td>
+    </tr>
+    <tr>
+      <th>19651</th>
+      <td>24874</td>
+      <td>1cf0cbb3281049ab</td>
+      <td>2014-01-15 21:54:01</td>
+      <td>-0.054317</td>
+      <td>['Mark_Antony', 'Rome', 'Tennis', 'Hawk-Eye', ...</td>
+      <td>Feather</td>
+      <td>restart</td>
+      <td>-0.323962</td>
+      <td>2.053101</td>
+      <td>0.130764</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>8.585366</td>
+      <td>[('Mark_Antony', 'Rome'), ('Rome', 'Tennis'), ...</td>
+      <td>[0.2700643837451935, 0.28349533677101135, 0.21...</td>
+      <td>-1.396141</td>
+      <td>5.595124</td>
+      <td>-1.730546</td>
+      <td>-2.836729</td>
+      <td>-5.768889</td>
+      <td>0.561510</td>
+    </tr>
+  </tbody>
+</table>
+<p>19652 rows × 23 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_cols</span> <span class="o">=</span> <span class="n">features_finished_paths_zscore</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span>
+    <span class="n">features_finished_paths_zscore</span><span class="p">[</span>
+        <span class="n">features_cols_used_for_clustering</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span>
+    <span class="n">corner</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\Cyril\anaconda3\envs\DLbiomed\lib\site-packages\seaborn\axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x1b819bdc520&gt;
+</pre></div>
+</div>
+<img alt="_images/1a7f6b4edf5e1b5923d02ae2c3fc2981813bd2d6b90c169328756430886e4380.png" src="_images/1a7f6b4edf5e1b5923d02ae2c3fc2981813bd2d6b90c169328756430886e4380.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">feature</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">features_cols_used_for_clustering</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">features_finished_paths_zscore</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d1238e8425429c28a536f7add3bbb6fb9f0347fc22177ac287aff1251b01ecef.png" src="_images/d1238e8425429c28a536f7add3bbb6fb9f0347fc22177ac287aff1251b01ecef.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_finished_paths</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>durationInSec                0
+backtrack                    0
+numberOfPath                 3
+position_mean             2024
+position_std              2024
+path_length                  0
+coarse_mean_time             0
+semantic_similarity          0
+path_closeness_abs_sum       0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run PCA on cols used for the pairplot</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">features_finished_paths_zscore</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+<span class="c1"># plot cumsum of explained variance</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># show correlation of features</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">features_finished_paths_zscore</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span>
+    <span class="n">annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;icefire&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/675002385aa61c636aa95665c8d1b32cb8b1950c6cd838fa75d6a46532660476.png" src="_images/675002385aa61c636aa95665c8d1b32cb8b1950c6cd838fa75d6a46532660476.png" />
+<img alt="_images/01356859366183c34bc26121b4667cd93764d137b86aaea6ed4ee76fb1b398f9.png" src="_images/01356859366183c34bc26121b4667cd93764d137b86aaea6ed4ee76fb1b398f9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the PCA results in 3D with plotly</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+                    <span class="n">color</span><span class="o">=</span><span class="mi">3</span>
+                    <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # run t-SNE on cols used for the pairplot</span>
+<span class="c1"># tsne = TSNE(n_components=3, metric=&quot;cosine&quot;)</span>
+<span class="c1"># result = tsne.fit_transform(</span>
+<span class="c1">#     features_finished_paths_zscore[features_cols_used_for_clustering].dropna()</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # plot the t-SNE results in 3D with plotly</span>
+<span class="c1"># fig = px.scatter_3d(</span>
+<span class="c1">#     result,</span>
+<span class="c1">#     x=0,</span>
+<span class="c1">#     y=1,</span>
+<span class="c1">#     z=2,</span>
+<span class="c1">#     color=features_finished_paths_zscore[features_cols_used_for_clustering].dropna()[</span>
+<span class="c1">#         &quot;durationInSec&quot;</span>
+<span class="c1">#     ],</span>
+<span class="c1"># )</span>
+<span class="c1"># fig.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># UMAP</span>
+<span class="n">umap</span> <span class="o">=</span> <span class="n">UMAP</span><span class="o">.</span><span class="n">UMAP</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;cosine&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">umap</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span>
+    <span class="n">features_finished_paths_zscore</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the UMAP results in 3D with plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span>
+    <span class="n">result</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">features_finished_paths_zscore</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()[</span>
+        <span class="s2">&quot;path_length&quot;</span>
+    <span class="p">],</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;UMAP,path_length slope before as color&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # run t-SNE on cols used for the pairplot</span>
+<span class="c1"># tsne = TSNE(n_components=3, metric=&quot;euclidean&quot;)</span>
+<span class="c1"># result_tsne_euc = tsne.fit_transform(</span>
+<span class="c1">#     features_finished_paths_zscore[features_cols_used_for_clustering].dropna()</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # plot the t-SNE results in 3D with plotly</span>
+<span class="c1"># fig = px.scatter_3d(</span>
+<span class="c1">#     result_tsne_euc,</span>
+<span class="c1">#     x=0,</span>
+<span class="c1">#     y=1,</span>
+<span class="c1">#     z=2,</span>
+<span class="c1">#     color=features_finished_paths_zscore[features_cols_used_for_clustering]</span>
+<span class="c1">#     .dropna()[&quot;path_length&quot;]</span>
+<span class="c1">#     # .apply(lambda x: np.log(x)),</span>
+<span class="c1"># )</span>
+<span class="c1"># fig.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># UMAP</span>
+<span class="n">umap</span> <span class="o">=</span> <span class="n">UMAP</span><span class="o">.</span><span class="n">UMAP</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span><span class="p">)</span>
+<span class="n">result_umap_euc</span> <span class="o">=</span> <span class="n">umap</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span>
+    <span class="n">features_finished_paths_zscore</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the UMAP results in 3D with plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span>
+    <span class="n">result_umap_euc</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">features_finished_paths_zscore</span><span class="p">[</span><span class="n">features_cols_used_for_clustering</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()[</span>
+        <span class="s2">&quot;path_length&quot;</span>
+    <span class="p">],</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;UMAP, path path_length slope before as color&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cyril, David, Laurent, Mathilde, Yves
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

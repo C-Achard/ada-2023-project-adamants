@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; ADA - Milestone P2 - ADAmants</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'feature_5_test';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="README_p3.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_cropped.png" class="logo__image only-light" alt="ADA - Milestone P2 - ADAmants - Home"/>
+    <script>document.write(`<img src="_static/logo_cropped.png" class="logo__image only-dark" alt="ADA - Milestone P2 - ADAmants - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README_p3.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="data_loading.html">Data loading and pre-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering.html">Leiden clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering_validation.html">Robustness of the Leiden clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering_w_timeouts.html">Clustering with the timeouts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hierarchical_and_gmm_clustering.html">Alternative clustering methods</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/epfl-ada/ada-2023-project-adamants" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/feature_5_test.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">feature_26_generation</span> <span class="kn">import</span> <span class="n">DATA_FOLDER</span><span class="p">,</span> <span class="n">PATHS_AND_GRAPH</span><span class="p">,</span> <span class="n">PATHS_FINISHED</span><span class="p">,</span> <span class="n">PATHS_UNFINISHED</span><span class="p">,</span> <span class="n">SHORTEST_PATH_MATRIX</span> <span class="p">,</span> <span class="n">ARTICLES</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">load_articles</span><span class="p">,</span> <span class="n">add_path_length</span><span class="p">,</span> <span class="n">add_link_position</span>
+<span class="kn">from</span> <span class="nn">feature_5_generation</span> <span class="kn">import</span>  <span class="n">add_average_time_on_page</span><span class="p">,</span> <span class="n">add_paths_ratio</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas.errors</span> <span class="kn">import</span> <span class="n">SettingWithCopyWarning</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../book&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;book/&quot;</span><span class="p">)</span> <span class="c1"># Attend to more cases</span>
+<span class="kn">from</span> <span class="nn">graph_measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">SettingWithCopyWarning</span><span class="p">)</span> <span class="c1"># Huge amounts of warnings generated in loops. Ignore</span>
+
+<span class="kn">from</span> <span class="nn">feature_5_generation</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Setup&#39;</span><span class="p">)</span>
+<span class="n">paths_finished_raw</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s1">&#39;paths_finished&#39;</span><span class="p">)</span>
+<span class="n">paths_unfinished_raw</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s1">&#39;paths_unfinished&#39;</span><span class="p">,</span> <span class="n">drop_timeouts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape of paths_finished_raw: </span><span class="si">{</span><span class="n">paths_finished_raw</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape of paths_unfinished_raw: </span><span class="si">{</span><span class="n">paths_unfinished_raw</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">paths_finished</span> <span class="o">=</span> <span class="n">paths_finished_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">paths_unfinished</span> <span class="o">=</span> <span class="n">paths_unfinished_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">shortest_path_distance_matrix</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s1">&#39;shortest_path_matrix&#39;</span><span class="p">)</span>
+<span class="n">articles</span> <span class="o">=</span> <span class="n">load_articles</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setup
+Shape of paths_finished_raw: (51318, 5)
+Shape of paths_unfinished_raw: (19661, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Feature 5&#39;</span><span class="p">)</span>
+<span class="n">paths_finished_copy</span> <span class="o">=</span> <span class="n">paths_finished</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">paths_finished</span> <span class="o">=</span> <span class="n">add_paths_ratio</span><span class="p">(</span><span class="n">paths_finished_copy</span><span class="p">,</span><span class="n">shortest_path_distance_matrix</span><span class="p">,</span><span class="n">articles</span><span class="p">)</span>
+<span class="n">paths_finished_copy</span> <span class="o">=</span> <span class="n">paths_finished</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">paths_finished</span> <span class="o">=</span> <span class="n">add_average_time_on_page</span><span class="p">(</span><span class="n">paths_finished_copy</span><span class="p">)</span>
+<span class="n">paths_unfinished_copy</span> <span class="o">=</span> <span class="n">paths_unfinished</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">paths_unfinished</span> <span class="o">=</span> <span class="n">add_paths_ratio</span><span class="p">(</span><span class="n">paths_unfinished_copy</span><span class="p">,</span><span class="n">shortest_path_distance_matrix</span><span class="p">,</span><span class="n">articles</span><span class="p">,</span><span class="n">finished</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">paths_unfinished_copy</span> <span class="o">=</span> <span class="n">paths_unfinished</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">paths_unfinished</span> <span class="o">=</span> <span class="n">add_average_time_on_page</span><span class="p">(</span><span class="n">paths_unfinished_copy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Feature 5
+100%|███████████████████████████████████████████████████████████████████████████████████| 51318/51318 [00:13&lt;00:00, 3841.01it/s]
+100%|███████████████████████████████████████████████████████████████████████████████████| 19644/19644 [00:03&lt;00:00, 5340.76it/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paths_finished</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>rating</th>
+      <th>ratio</th>
+      <th>average_time_on_page</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6a3701d319fc3754</td>
+      <td>2011-02-15 03:26:49</td>
+      <td>166</td>
+      <td>[14th_century, 15th_century, 16th_century, Pac...</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>18.444444</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3824310e536af032</td>
+      <td>2012-08-12 06:36:52</td>
+      <td>88</td>
+      <td>[14th_century, Europe, Africa, Atlantic_slave_...</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>17.600000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>415612e93584d30e</td>
+      <td>2012-10-03 21:10:40</td>
+      <td>138</td>
+      <td>[14th_century, Niger, Nigeria, British_Empire,...</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>17.250000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>64dd5cd342e3780c</td>
+      <td>2010-02-08 07:25:25</td>
+      <td>37</td>
+      <td>[14th_century, Renaissance, Ancient_Greece, Gr...</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>9.250000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>015245d773376aab</td>
+      <td>2013-04-23 15:27:08</td>
+      <td>175</td>
+      <td>[14th_century, Italy, Roman_Catholic_Church, H...</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>25.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paths_unfinished</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>target</th>
+      <th>type</th>
+      <th>ratio</th>
+      <th>average_time_on_page</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>2b015fb8181c48f2</td>
+      <td>2011-02-07 15:00:19</td>
+      <td>1818</td>
+      <td>[Malawi, Democracy, Alexander_the_Great]</td>
+      <td>First_Crusade</td>
+      <td>timeout</td>
+      <td>2</td>
+      <td>606.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>53a53bc244e08a6a</td>
+      <td>2011-02-07 17:18:25</td>
+      <td>1808</td>
+      <td>[Paraguay, Bolivia]</td>
+      <td>Mount_St._Helens</td>
+      <td>timeout</td>
+      <td>1</td>
+      <td>904.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>131600803df4895e</td>
+      <td>2011-02-07 17:42:37</td>
+      <td>2009</td>
+      <td>[Agriculture, History_of_the_world, China, Yan...</td>
+      <td>Grand_Canal_of_China</td>
+      <td>timeout</td>
+      <td>2</td>
+      <td>502.25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
+      <td>486bb79910fe9dd2</td>
+      <td>2011-02-07 18:01:00</td>
+      <td>1932</td>
+      <td>[Mind, Christianity, Europe, Renaissance, Anci...</td>
+      <td>Scouting</td>
+      <td>timeout</td>
+      <td>3</td>
+      <td>276.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7</td>
+      <td>6d136e371e42474f</td>
+      <td>2011-02-07 18:07:50</td>
+      <td>175</td>
+      <td>[4-2-0, United_States, Agriculture, Sugar, Aus...</td>
+      <td>Cane_Toad</td>
+      <td>restart</td>
+      <td>3</td>
+      <td>35.00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cyril, David, Laurent, Mathilde, Yves
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

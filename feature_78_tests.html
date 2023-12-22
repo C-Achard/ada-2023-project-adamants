@@ -1,0 +1,3123 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; ADA - Milestone P2 - ADAmants</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'feature_78_tests';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="README_p3.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_cropped.png" class="logo__image only-light" alt="ADA - Milestone P2 - ADAmants - Home"/>
+    <script>document.write(`<img src="_static/logo_cropped.png" class="logo__image only-dark" alt="ADA - Milestone P2 - ADAmants - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README_p3.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="data_loading.html">Data loading and pre-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering.html">Leiden clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering_validation.html">Robustness of the Leiden clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leiden_clustering_w_timeouts.html">Clustering with the timeouts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hierarchical_and_gmm_clustering.html">Alternative clustering methods</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/epfl-ada/ada-2023-project-adamants" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/feature_78_tests.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">feature_78_generation</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_paths</span><span class="p">,</span> <span class="n">unfinished_paths</span> <span class="o">=</span> <span class="n">load_paths</span><span class="p">(</span><span class="n">unquote_names</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">drop_timeouts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">GRAPH_METRICS_PATH</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">finished_paths</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">unfinished_paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6a3701d319fc3754</td>
+      <td>2011-02-15 03:26:49</td>
+      <td>166</td>
+      <td>[14th_century, 15th_century, 16th_century, Pac...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3824310e536af032</td>
+      <td>2012-08-12 06:36:52</td>
+      <td>88</td>
+      <td>[14th_century, Europe, Africa, Atlantic_slave_...</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>415612e93584d30e</td>
+      <td>2012-10-03 21:10:40</td>
+      <td>138</td>
+      <td>[14th_century, Niger, Nigeria, British_Empire,...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>64dd5cd342e3780c</td>
+      <td>2010-02-08 07:25:25</td>
+      <td>37</td>
+      <td>[14th_century, Renaissance, Ancient_Greece, Gr...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>015245d773376aab</td>
+      <td>2013-04-23 15:27:08</td>
+      <td>175</td>
+      <td>[14th_century, Italy, Roman_Catholic_Church, H...</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51313</th>
+      <td>15a13a1d66ef5456</td>
+      <td>2012-10-03 02:23:35</td>
+      <td>66</td>
+      <td>[Yagan, Ancient_Egypt, Civilization]</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51314</th>
+      <td>2ef7ac844cefda58</td>
+      <td>2011-03-16 05:42:18</td>
+      <td>165</td>
+      <td>[Yagan, Folklore, Brothers_Grimm, &lt;, 19th_cent...</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>51315</th>
+      <td>12863abb7887f890</td>
+      <td>2013-11-22 04:42:52</td>
+      <td>228</td>
+      <td>[Yagan, Australia, England, France, United_Sta...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51316</th>
+      <td>19f8284371753362</td>
+      <td>2011-02-27 07:42:47</td>
+      <td>56</td>
+      <td>[Yarralumla%2C_Australian_Capital_Territory, A...</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>51317</th>
+      <td>24b84602179de377</td>
+      <td>2011-10-09 01:11:41</td>
+      <td>30</td>
+      <td>[Ziad_Jarrah, Germany, Jew]</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>51318 rows × 5 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>target</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>2b015fb8181c48f2</td>
+      <td>2011-02-07 15:00:19</td>
+      <td>1818</td>
+      <td>[Malawi, Democracy, Alexander_the_Great]</td>
+      <td>First_Crusade</td>
+      <td>timeout</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>53a53bc244e08a6a</td>
+      <td>2011-02-07 17:18:25</td>
+      <td>1808</td>
+      <td>[Paraguay, Bolivia]</td>
+      <td>Mount_St._Helens</td>
+      <td>timeout</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>131600803df4895e</td>
+      <td>2011-02-07 17:42:37</td>
+      <td>2009</td>
+      <td>[Agriculture, History_of_the_world, China, Yan...</td>
+      <td>Grand_Canal_of_China</td>
+      <td>timeout</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
+      <td>486bb79910fe9dd2</td>
+      <td>2011-02-07 18:01:00</td>
+      <td>1932</td>
+      <td>[Mind, Christianity, Europe, Renaissance, Anci...</td>
+      <td>Scouting</td>
+      <td>timeout</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7</td>
+      <td>6d136e371e42474f</td>
+      <td>2011-02-07 18:07:50</td>
+      <td>175</td>
+      <td>[4-2-0, United_States, Agriculture, Sugar, Aus...</td>
+      <td>Cane_Toad</td>
+      <td>restart</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>19656</th>
+      <td>24869</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:00:12</td>
+      <td>182</td>
+      <td>[Turks_and_Caicos_Islands, United_States, Iraq...</td>
+      <td>Iraq_War</td>
+      <td>restart</td>
+    </tr>
+    <tr>
+      <th>19657</th>
+      <td>24870</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:06:45</td>
+      <td>180</td>
+      <td>[Franz_Kafka, Tuberculosis, World_Health_Organ...</td>
+      <td>Cholera</td>
+      <td>restart</td>
+    </tr>
+    <tr>
+      <th>19658</th>
+      <td>24872</td>
+      <td>2e09a7224600a7cd</td>
+      <td>2014-01-15 15:06:40</td>
+      <td>1900</td>
+      <td>[Computer_programming, Linguistics, Culture, P...</td>
+      <td>The_Beatles</td>
+      <td>timeout</td>
+    </tr>
+    <tr>
+      <th>19659</th>
+      <td>24873</td>
+      <td>60af9e2138051b96</td>
+      <td>2014-01-15 15:24:41</td>
+      <td>1903</td>
+      <td>[Jamaica, United_Kingdom, World_War_II, Battle...</td>
+      <td>Alan_Turing</td>
+      <td>timeout</td>
+    </tr>
+    <tr>
+      <th>19660</th>
+      <td>24874</td>
+      <td>1cf0cbb3281049ab</td>
+      <td>2014-01-15 21:54:01</td>
+      <td>352</td>
+      <td>[Mark_Antony, Rome, Tennis, Hawk-Eye, Computer]</td>
+      <td>Feather</td>
+      <td>restart</td>
+    </tr>
+  </tbody>
+</table>
+<p>19661 rows × 7 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paths_finished_modif</span> <span class="o">=</span> <span class="n">add_computed_graph_features</span><span class="p">(</span>
+    <span class="n">finished_paths</span><span class="p">,</span> 
+    <span class="n">metrics_pickle_path</span><span class="o">=</span><span class="s2">&quot;../data/p3_extra_data/finished_path_metrics.pkl&quot;</span>
+    <span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">paths_finished_modif</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading metrics from pickle...
+Metric path_degree
+Metric path_clustering
+Metric path_degree_centrality
+Metric path_betweenness
+Metric path_closeness
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>rating</th>
+      <th>path_degree_abs_sum</th>
+      <th>path_clustering_abs_sum</th>
+      <th>path_degree_centrality_abs_sum</th>
+      <th>path_betweenness_abs_sum</th>
+      <th>path_closeness_abs_sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6a3701d319fc3754</td>
+      <td>2011-02-15 03:26:49</td>
+      <td>166</td>
+      <td>[14th_century, 15th_century, 16th_century, Pac...</td>
+      <td>NaN</td>
+      <td>5.197422</td>
+      <td>-3.233355</td>
+      <td>-3.234431</td>
+      <td>-5.004633</td>
+      <td>-2.964052</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3824310e536af032</td>
+      <td>2012-08-12 06:36:52</td>
+      <td>88</td>
+      <td>[14th_century, Europe, Africa, Atlantic_slave_...</td>
+      <td>3.0</td>
+      <td>7.010212</td>
+      <td>-2.318889</td>
+      <td>-1.421642</td>
+      <td>-3.524030</td>
+      <td>-1.640078</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>415612e93584d30e</td>
+      <td>2012-10-03 21:10:40</td>
+      <td>138</td>
+      <td>[14th_century, Niger, Nigeria, British_Empire,...</td>
+      <td>NaN</td>
+      <td>5.236336</td>
+      <td>-3.212821</td>
+      <td>-3.195518</td>
+      <td>-4.962358</td>
+      <td>-2.938361</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>64dd5cd342e3780c</td>
+      <td>2010-02-08 07:25:25</td>
+      <td>37</td>
+      <td>[14th_century, Renaissance, Ancient_Greece, Gr...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>015245d773376aab</td>
+      <td>2013-04-23 15:27:08</td>
+      <td>175</td>
+      <td>[14th_century, Italy, Roman_Catholic_Church, H...</td>
+      <td>3.0</td>
+      <td>6.315864</td>
+      <td>-2.737924</td>
+      <td>-2.115989</td>
+      <td>-4.991059</td>
+      <td>-2.013457</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51315</th>
+      <td>15a13a1d66ef5456</td>
+      <td>2012-10-03 02:23:35</td>
+      <td>66</td>
+      <td>[Yagan, Ancient_Egypt, Civilization]</td>
+      <td>NaN</td>
+      <td>5.209486</td>
+      <td>-2.320631</td>
+      <td>-3.222367</td>
+      <td>-5.666352</td>
+      <td>-1.732727</td>
+    </tr>
+    <tr>
+      <th>51316</th>
+      <td>2ef7ac844cefda58</td>
+      <td>2011-03-16 05:42:18</td>
+      <td>165</td>
+      <td>[Yagan, Folklore, Brothers_Grimm, &lt;, 19th_cent...</td>
+      <td>3.0</td>
+      <td>4.297096</td>
+      <td>-4.423940</td>
+      <td>-4.134757</td>
+      <td>-5.967147</td>
+      <td>-3.460478</td>
+    </tr>
+    <tr>
+      <th>51317</th>
+      <td>12863abb7887f890</td>
+      <td>2013-11-22 04:42:52</td>
+      <td>228</td>
+      <td>[Yagan, Australia, England, France, United_Sta...</td>
+      <td>NaN</td>
+      <td>6.343111</td>
+      <td>-2.115506</td>
+      <td>-2.088742</td>
+      <td>-3.527183</td>
+      <td>-2.438024</td>
+    </tr>
+    <tr>
+      <th>51318</th>
+      <td>19f8284371753362</td>
+      <td>2011-02-27 07:42:47</td>
+      <td>56</td>
+      <td>[Yarralumla%2C_Australian_Capital_Territory, A...</td>
+      <td>1.0</td>
+      <td>7.695758</td>
+      <td>-1.820454</td>
+      <td>-0.736095</td>
+      <td>-2.147011</td>
+      <td>-1.268453</td>
+    </tr>
+    <tr>
+      <th>51319</th>
+      <td>24b84602179de377</td>
+      <td>2011-10-09 01:11:41</td>
+      <td>30</td>
+      <td>[Ziad_Jarrah, Germany, Jew]</td>
+      <td>NaN</td>
+      <td>7.275172</td>
+      <td>-1.595770</td>
+      <td>-1.156681</td>
+      <td>-3.333625</td>
+      <td>-1.172824</td>
+    </tr>
+  </tbody>
+</table>
+<p>51320 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paths_unfinished_modif</span> <span class="o">=</span> <span class="n">add_computed_graph_features</span><span class="p">(</span>
+    <span class="n">unfinished_paths</span><span class="p">,</span> 
+    <span class="n">metrics_pickle_path</span><span class="o">=</span><span class="s2">&quot;../data/p3_extra_data/unfinished_path_metrics.pkl&quot;</span>
+    <span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">paths_unfinished_modif</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading metrics from pickle...
+Metric path_degree
+Metric path_clustering
+Metric path_degree_centrality
+Metric path_betweenness
+Metric path_closeness
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>target</th>
+      <th>type</th>
+      <th>path_degree_abs_sum</th>
+      <th>path_clustering_abs_sum</th>
+      <th>path_degree_centrality_abs_sum</th>
+      <th>path_betweenness_abs_sum</th>
+      <th>path_closeness_abs_sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>2b015fb8181c48f2</td>
+      <td>2011-02-07 15:00:19</td>
+      <td>1818</td>
+      <td>[Malawi, Democracy, Alexander_the_Great]</td>
+      <td>First_Crusade</td>
+      <td>timeout</td>
+      <td>4.624973</td>
+      <td>-1.658146</td>
+      <td>-3.806880</td>
+      <td>-6.527886</td>
+      <td>-2.041349</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>53a53bc244e08a6a</td>
+      <td>2011-02-07 17:18:25</td>
+      <td>1808</td>
+      <td>[Paraguay, Bolivia]</td>
+      <td>Mount_St._Helens</td>
+      <td>timeout</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>131600803df4895e</td>
+      <td>2011-02-07 17:42:37</td>
+      <td>2009</td>
+      <td>[Agriculture, History_of_the_world, China, Yan...</td>
+      <td>Grand_Canal_of_China</td>
+      <td>timeout</td>
+      <td>6.429719</td>
+      <td>-1.952055</td>
+      <td>-2.002134</td>
+      <td>-4.467183</td>
+      <td>-1.925200</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
+      <td>486bb79910fe9dd2</td>
+      <td>2011-02-07 18:01:00</td>
+      <td>1932</td>
+      <td>[Mind, Christianity, Europe, Renaissance, Anci...</td>
+      <td>Scouting</td>
+      <td>timeout</td>
+      <td>5.705032</td>
+      <td>-3.544534</td>
+      <td>-2.726821</td>
+      <td>-4.845663</td>
+      <td>-2.936609</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7</td>
+      <td>6d136e371e42474f</td>
+      <td>2011-02-07 18:07:50</td>
+      <td>175</td>
+      <td>[4-2-0, United_States, Agriculture, Sugar, Aus...</td>
+      <td>Cane_Toad</td>
+      <td>restart</td>
+      <td>7.585732</td>
+      <td>-2.590255</td>
+      <td>-0.846121</td>
+      <td>-2.271594</td>
+      <td>-0.927471</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>19664</th>
+      <td>24869</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:00:12</td>
+      <td>182</td>
+      <td>[Turks_and_Caicos_Islands, United_States, Iraq...</td>
+      <td>Iraq_War</td>
+      <td>restart</td>
+      <td>7.555088</td>
+      <td>-1.505405</td>
+      <td>-0.876766</td>
+      <td>-2.304742</td>
+      <td>-1.574654</td>
+    </tr>
+    <tr>
+      <th>19665</th>
+      <td>24870</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:06:45</td>
+      <td>180</td>
+      <td>[Franz_Kafka, Tuberculosis, World_Health_Organ...</td>
+      <td>Cholera</td>
+      <td>restart</td>
+      <td>3.669951</td>
+      <td>-3.305998</td>
+      <td>-4.761902</td>
+      <td>-7.644179</td>
+      <td>-4.383847</td>
+    </tr>
+    <tr>
+      <th>19666</th>
+      <td>24872</td>
+      <td>2e09a7224600a7cd</td>
+      <td>2014-01-15 15:06:40</td>
+      <td>1900</td>
+      <td>[Computer_programming, Linguistics, Culture, P...</td>
+      <td>The_Beatles</td>
+      <td>timeout</td>
+      <td>4.760035</td>
+      <td>-2.802979</td>
+      <td>-3.671818</td>
+      <td>-6.478384</td>
+      <td>-2.157703</td>
+    </tr>
+    <tr>
+      <th>19667</th>
+      <td>24873</td>
+      <td>60af9e2138051b96</td>
+      <td>2014-01-15 15:24:41</td>
+      <td>1903</td>
+      <td>[Jamaica, United_Kingdom, World_War_II, Battle...</td>
+      <td>Alan_Turing</td>
+      <td>timeout</td>
+      <td>7.158709</td>
+      <td>-1.836719</td>
+      <td>-1.273145</td>
+      <td>-2.951980</td>
+      <td>-1.724655</td>
+    </tr>
+    <tr>
+      <th>19668</th>
+      <td>24874</td>
+      <td>1cf0cbb3281049ab</td>
+      <td>2014-01-15 21:54:01</td>
+      <td>352</td>
+      <td>[Mark_Antony, Rome, Tennis, Hawk-Eye, Computer]</td>
+      <td>Feather</td>
+      <td>restart</td>
+      <td>5.595124</td>
+      <td>-1.730546</td>
+      <td>-2.836729</td>
+      <td>-5.768889</td>
+      <td>-2.107167</td>
+    </tr>
+  </tbody>
+</table>
+<p>19669 rows × 12 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metrics_dict</span> <span class="o">=</span> <span class="n">compute_path_metrics_w_nodes</span><span class="p">(</span>
+    <span class="n">nodes</span><span class="p">,</span> <span class="n">unfinished_paths</span><span class="p">,</span> <span class="n">pickle_path</span><span class="o">=</span><span class="s2">&quot;../data/p3_extra_data/unfinished_path_metrics.pkl&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading metrics from pickle...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">metrics_dict</span><span class="p">[</span><span class="s2">&quot;path_degree&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0                            [158, 197, 134]
+1                                  [59, 129]
+2                        [298, 154, 586, 38]
+3        [40, 392, 1092, 185, 228, 209, 494]
+4                   [8, 1845, 298, 133, 649]
+                        ...                 
+19656          [42, 1845, 210, 444, 82, 126]
+19657      [41, 105, 102, 97, 221, 122, 109]
+19658                      [20, 61, 155, 72]
+19659                   [133, 1140, 870, 27]
+19660                [35, 286, 119, 14, 123]
+Length: 19661, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">metrics_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">too_short</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">all_nan</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_at_0</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_at_end</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_at_1</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_at_beforelast</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Metric </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> of length </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">too_short</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+            <span class="n">all_nan</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">max_at_0</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">max_at_end</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">max_at_1</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">max_at_beforelast</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Too short: </span><span class="si">{</span><span class="n">too_short</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All nan: </span><span class="si">{</span><span class="n">all_nan</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max at 0: </span><span class="si">{</span><span class="n">max_at_0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max at end: </span><span class="si">{</span><span class="n">max_at_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total issues: </span><span class="si">{</span><span class="n">too_short</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">all_nan</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">max_at_0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">max_at_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total paths: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metric path_degree of length 19661
+Too short: 3580
+All nan: 0
+Max at 0: 636
+Max at end: 3094
+Total issues: 7310
+Total paths: 19661
+____________________
+Metric path_clustering of length 19661
+Too short: 3580
+All nan: 0
+Max at 0: 7197
+Max at end: 2832
+Total issues: 13609
+Total paths: 19661
+____________________
+Metric path_degree_centrality of length 19661
+Too short: 3580
+All nan: 0
+Max at 0: 636
+Max at end: 3094
+Total issues: 7310
+Total paths: 19661
+____________________
+Metric path_betweenness of length 19661
+Too short: 3580
+All nan: 0
+Max at 0: 716
+Max at end: 3010
+Total issues: 7306
+Total paths: 19661
+____________________
+Metric path_closeness of length 19661
+Too short: 3580
+All nan: 0
+Max at 0: 611
+Max at end: 3070
+Total issues: 7261
+Total paths: 19661
+____________________
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slopes</span> <span class="o">=</span> <span class="n">compute_metrics_slopes</span><span class="p">(</span><span class="n">metrics_dict</span><span class="p">)</span>
+<span class="c1"># slopes = compute_metrics_mean_diff(metrics_dict)</span>
+<span class="c1"># slopes = compute_metrics_delta_norm(metrics_dict)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\Cyril\anaconda3\envs\DLbiomed\lib\site-packages\numpy\lib\polynomial.py:667: RuntimeWarning: invalid value encountered in divide
+  lhs /= scale
+c:\Users\Cyril\anaconda3\envs\DLbiomed\lib\site-packages\numpy\lib\polynomial.py:667: RuntimeWarning: invalid value encountered in divide
+  lhs /= scale
+c:\Users\Cyril\anaconda3\envs\DLbiomed\lib\site-packages\numpy\lib\polynomial.py:667: RuntimeWarning: invalid value encountered in divide
+  lhs /= scale
+c:\Users\Cyril\anaconda3\envs\DLbiomed\lib\site-packages\numpy\lib\polynomial.py:667: RuntimeWarning: invalid value encountered in divide
+  lhs /= scale
+c:\Users\Cyril\anaconda3\envs\DLbiomed\lib\site-packages\numpy\lib\polynomial.py:667: RuntimeWarning: invalid value encountered in divide
+  lhs /= scale
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slopes</span><span class="p">[</span><span class="s2">&quot;path_degree&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>path_degree_slope_before</th>
+      <th>path_degree_slope_after</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-72.000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>176.000</td>
+      <td>22.700000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>58.500000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>19656</th>
+      <td>NaN</td>
+      <td>-15.350000</td>
+    </tr>
+    <tr>
+      <th>19657</th>
+      <td>4.125</td>
+      <td>-6.500000</td>
+    </tr>
+    <tr>
+      <th>19658</th>
+      <td>20.500</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19659</th>
+      <td>NaN</td>
+      <td>-421.500000</td>
+    </tr>
+    <tr>
+      <th>19660</th>
+      <td>NaN</td>
+      <td>0.666667</td>
+    </tr>
+  </tbody>
+</table>
+<p>19661 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slopes</span><span class="p">[</span><span class="s2">&quot;path_degree&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>path_degree_slope_before     9608
+path_degree_slope_after     10399
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="c1"># metric = metric.fillna(0)</span>
+    <span class="c1"># sns.histplot(data=metric, x=metric.columns[0], color=&quot;orange&quot;)</span>
+    <span class="c1"># sns.histplot(data=metric, x=metric.columns[1], color=&quot;blue&quot;)</span>
+    <span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/71c65f2541601e8f2e1c228d53076c7c2e8f0a6b3e36bea457a45eac785efcec.png" src="_images/71c65f2541601e8f2e1c228d53076c7c2e8f0a6b3e36bea457a45eac785efcec.png" />
+<img alt="_images/4bc5f078f88ced64fb9e4d4c484dceb2b28eb68000c911264528a4f158841416.png" src="_images/4bc5f078f88ced64fb9e4d4c484dceb2b28eb68000c911264528a4f158841416.png" />
+<img alt="_images/4553dbe4456387e3e6cc2f02127fba802777f0f96b99abd5af01fabcb993c771.png" src="_images/4553dbe4456387e3e6cc2f02127fba802777f0f96b99abd5af01fabcb993c771.png" />
+<img alt="_images/20aa3312045777b8036cdd1ee8784383a3e078f1b4002f3d1453c5d44fe22ff1.png" src="_images/20aa3312045777b8036cdd1ee8784383a3e078f1b4002f3d1453c5d44fe22ff1.png" />
+<img alt="_images/5fce15283dbd4fb115a60a7c0b3b7cbb743e3ab67c1c5613167aee5bddcf7fd1.png" src="_images/5fce15283dbd4fb115a60a7c0b3b7cbb743e3ab67c1c5613167aee5bddcf7fd1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slopes_temp</span> <span class="o">=</span> <span class="n">slopes</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Metric </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">slopes_temp</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_abs_sum&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_slope_before&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_slope_after&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+<span class="n">slopes</span> <span class="o">=</span> <span class="n">slopes_temp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metric path_degree
+Metric path_clustering
+Metric path_degree_centrality
+Metric path_betweenness
+Metric path_closeness
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">&quot;abs_sum&quot;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">1e-6</span><span class="p">))</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2ef12ad5d305bf631b907a7154376faf56d9aed26385132e6175d751c44ea721.png" src="_images/2ef12ad5d305bf631b907a7154376faf56d9aed26385132e6175d751c44ea721.png" />
+<img alt="_images/9697aadb3676fd2cbfa51d603346f9b48139e6dfbdf1e9efda66f1c284c32f6a.png" src="_images/9697aadb3676fd2cbfa51d603346f9b48139e6dfbdf1e9efda66f1c284c32f6a.png" />
+<img alt="_images/ee80899c194be5d331c2ccfa69e75e995db603a5bdc3af05073b82fef8d5a4ad.png" src="_images/ee80899c194be5d331c2ccfa69e75e995db603a5bdc3af05073b82fef8d5a4ad.png" />
+<img alt="_images/36f97ac7a1b1a35fca6c37f38d007bd6f15818c0ebbd1241a6e305439baa15f3.png" src="_images/36f97ac7a1b1a35fca6c37f38d007bd6f15818c0ebbd1241a6e305439baa15f3.png" />
+<img alt="_images/ede5a6cde6f6196b0f35a0dc83452202e274ad0f5a63ee9d07467ad728a45d01.png" src="_images/ede5a6cde6f6196b0f35a0dc83452202e274ad0f5a63ee9d07467ad728a45d01.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot heatmap of correlation between metrics with abs_sum</span>
+<span class="n">slopes_abs_sum</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">&quot;abs_sum&quot;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+        <span class="n">slopes_abs_sum</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">1e-6</span><span class="p">))</span>
+<span class="n">slopes_abs_sum</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">slopes_abs_sum</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">slopes_abs_sum</span><span class="p">,</span> <span class="n">corner</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\Cyril\anaconda3\envs\DLbiomed\lib\site-packages\seaborn\axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x198e14d14c0&gt;
+</pre></div>
+</div>
+<img alt="_images/dcc4267c93c51ffbfcdf9d7f2ed574e04730a035528be799f8854e7043a6924b.png" src="_images/dcc4267c93c51ffbfcdf9d7f2ed574e04730a035528be799f8854e7043a6924b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_metrics_dict</span> <span class="o">=</span> <span class="n">compute_path_metrics_w_nodes</span><span class="p">(</span>
+    <span class="n">nodes</span><span class="p">,</span> <span class="n">finished_paths</span><span class="p">,</span> <span class="n">pickle_path</span><span class="o">=</span><span class="s2">&quot;../data/p3_extra_data/finished_path_metrics.pkl&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading metrics from pickle...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">finished_metrics_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">too_short</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">all_nan</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_at_0</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_at_end</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_at_1</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_at_beforelast</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Metric </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> of length </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">too_short</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+            <span class="n">all_nan</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">max_at_0</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">max_at_end</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">max_at_1</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">max_at_beforelast</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Too short: </span><span class="si">{</span><span class="n">too_short</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All nan: </span><span class="si">{</span><span class="n">all_nan</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max at 0: </span><span class="si">{</span><span class="n">max_at_0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max at end: </span><span class="si">{</span><span class="n">max_at_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total issues: </span><span class="si">{</span><span class="n">too_short</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">all_nan</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">max_at_0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">max_at_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total paths: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metric path_degree of length 51318
+Too short: 809
+All nan: 0
+Max at 0: 1706
+Max at end: 1851
+Total issues: 4366
+Total paths: 51318
+____________________
+Metric path_clustering of length 51318
+Too short: 809
+All nan: 0
+Max at 0: 19413
+Max at end: 16854
+Total issues: 37076
+Total paths: 51318
+____________________
+Metric path_degree_centrality of length 51318
+Too short: 809
+All nan: 0
+Max at 0: 1706
+Max at end: 1851
+Total issues: 4366
+Total paths: 51318
+____________________
+Metric path_betweenness of length 51318
+Too short: 809
+All nan: 0
+Max at 0: 1749
+Max at end: 1984
+Total issues: 4542
+Total paths: 51318
+____________________
+Metric path_closeness of length 51318
+Too short: 809
+All nan: 0
+Max at 0: 1588
+Max at end: 2089
+Total issues: 4486
+Total paths: 51318
+____________________
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_metrics_dict</span><span class="p">[</span><span class="s2">&quot;path_degree&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        [102, 157, 216, 272, 375, 20, 689, 73, 31]
+1                          [102, 1092, 689, 73, 31]
+2            [102, 109, 173, 271, 220, 689, 73, 31]
+3                              [102, 185, 228, 360]
+4                [102, 635, 303, 64, 158, 220, 128]
+                            ...                    
+51313                                [20, 191, 179]
+51314            [20, 65, 14, 453, 62, 22, 132, 47]
+51315           [20, 649, 923, 1044, 1845, 119, 27]
+51316                           [41, 649, 1845, 97]
+51317                                [26, 912, 354]
+Length: 51318, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_metrics_dict</span><span class="p">[</span><span class="s2">&quot;path_degree&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        [102, 157, 216, 272, 375, 20, 689, 73, 31]
+1                          [102, 1092, 689, 73, 31]
+2            [102, 109, 173, 271, 220, 689, 73, 31]
+3                              [102, 185, 228, 360]
+4                [102, 635, 303, 64, 158, 220, 128]
+                            ...                    
+51313                                [20, 191, 179]
+51314            [20, 65, 14, 453, 62, 22, 132, 47]
+51315           [20, 649, 923, 1044, 1845, 119, 27]
+51316                           [41, 649, 1845, 97]
+51317                                [26, 912, 354]
+Length: 51318, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count number of arrays which contain at least one nan</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">finished_metrics_dict</span><span class="p">[</span><span class="s2">&quot;path_degree&quot;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="c1"># print(path)</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># finished_slopes = compute_metrics_slopes(finished_metrics_dict)</span>
+<span class="n">finished_slopes</span> <span class="o">=</span> <span class="n">compute_metrics_mean_diff</span><span class="p">(</span><span class="n">finished_metrics_dict</span><span class="p">)</span>
+<span class="c1"># finished_slopes = compute_metrics_delta_norm(finished_metrics_dict)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_slopes</span><span class="p">[</span><span class="s2">&quot;path_degree&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>path_degree_slope_before</th>
+      <th>path_degree_slope_after</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.305556</td>
+      <td>-164.500000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>990.000000</td>
+      <td>-117.888889</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>23.480000</td>
+      <td>-164.500000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>533.000000</td>
+      <td>-20.280000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51313</th>
+      <td>171.000000</td>
+      <td>-12.000000</td>
+    </tr>
+    <tr>
+      <th>51314</th>
+      <td>48.111111</td>
+      <td>-25.375000</td>
+    </tr>
+    <tr>
+      <th>51315</th>
+      <td>114.062500</td>
+      <td>-454.500000</td>
+    </tr>
+    <tr>
+      <th>51316</th>
+      <td>451.000000</td>
+      <td>-1748.000000</td>
+    </tr>
+    <tr>
+      <th>51317</th>
+      <td>886.000000</td>
+      <td>-558.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>51318 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_slopes</span><span class="p">[</span><span class="s2">&quot;path_degree&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>path_degree_slope_before    4368
+path_degree_slope_after     4350
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_paths</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6a3701d319fc3754</td>
+      <td>2011-02-15 03:26:49</td>
+      <td>166</td>
+      <td>[14th_century, 15th_century, 16th_century, Pac...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3824310e536af032</td>
+      <td>2012-08-12 06:36:52</td>
+      <td>88</td>
+      <td>[14th_century, Europe, Africa, Atlantic_slave_...</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>415612e93584d30e</td>
+      <td>2012-10-03 21:10:40</td>
+      <td>138</td>
+      <td>[14th_century, Niger, Nigeria, British_Empire,...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>64dd5cd342e3780c</td>
+      <td>2010-02-08 07:25:25</td>
+      <td>37</td>
+      <td>[14th_century, Renaissance, Ancient_Greece, Gr...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>015245d773376aab</td>
+      <td>2013-04-23 15:27:08</td>
+      <td>175</td>
+      <td>[14th_century, Italy, Roman_Catholic_Church, H...</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51313</th>
+      <td>15a13a1d66ef5456</td>
+      <td>2012-10-03 02:23:35</td>
+      <td>66</td>
+      <td>[Yagan, Ancient_Egypt, Civilization]</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51314</th>
+      <td>2ef7ac844cefda58</td>
+      <td>2011-03-16 05:42:18</td>
+      <td>165</td>
+      <td>[Yagan, Folklore, Brothers_Grimm, &lt;, 19th_cent...</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>51315</th>
+      <td>12863abb7887f890</td>
+      <td>2013-11-22 04:42:52</td>
+      <td>228</td>
+      <td>[Yagan, Australia, England, France, United_Sta...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51316</th>
+      <td>19f8284371753362</td>
+      <td>2011-02-27 07:42:47</td>
+      <td>56</td>
+      <td>[Yarralumla%2C_Australian_Capital_Territory, A...</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>51317</th>
+      <td>24b84602179de377</td>
+      <td>2011-10-09 01:11:41</td>
+      <td>30</td>
+      <td>[Ziad_Jarrah, Germany, Jew]</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>51318 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">finished_slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/00006bce538dc7641717eae43100d3f993648fa20421ca1ce9756d05c02775ce.png" src="_images/00006bce538dc7641717eae43100d3f993648fa20421ca1ce9756d05c02775ce.png" />
+<img alt="_images/75b599316ab1d32b72caf51c13560677486e64b517be5a37d35e1081fe6a81ca.png" src="_images/75b599316ab1d32b72caf51c13560677486e64b517be5a37d35e1081fe6a81ca.png" />
+<img alt="_images/42ecb8623f66234cd8a42f9ce8524623fa532b6139b6abe327d79a6b8f084040.png" src="_images/42ecb8623f66234cd8a42f9ce8524623fa532b6139b6abe327d79a6b8f084040.png" />
+<img alt="_images/f33aa91d4b9cc62c7557b66a6a984284432abc19432f8765ee2eba774f0159f8.png" src="_images/f33aa91d4b9cc62c7557b66a6a984284432abc19432f8765ee2eba774f0159f8.png" />
+<img alt="_images/9aa2555846eed34ed3680887843a25d6c6285bf30213795bedea418e8f657f18.png" src="_images/9aa2555846eed34ed3680887843a25d6c6285bf30213795bedea418e8f657f18.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_slopes_temp</span> <span class="o">=</span> <span class="n">finished_slopes</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">finished_slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Metric </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">finished_slopes_temp</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_abs_sum&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_slope_before&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_slope_after&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+<span class="n">finished_slopes</span> <span class="o">=</span> <span class="n">finished_slopes_temp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metric path_degree
+Metric path_clustering
+Metric path_degree_centrality
+Metric path_betweenness
+Metric path_closeness
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">finished_slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">&quot;abs_sum&quot;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">1e-6</span><span class="p">))</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/caa3857182cca8d737340a367767323f2d7c6c47278b667875c26996c3fb9e82.png" src="_images/caa3857182cca8d737340a367767323f2d7c6c47278b667875c26996c3fb9e82.png" />
+<img alt="_images/6289ced5c144310445b8c2ee4dc77841d013f5430f1860cf80278d5fc8eaaee6.png" src="_images/6289ced5c144310445b8c2ee4dc77841d013f5430f1860cf80278d5fc8eaaee6.png" />
+<img alt="_images/b857f7df6cf08826e049ab0af52b5b87fccbfb839b81f8e590f64b0e868ea852.png" src="_images/b857f7df6cf08826e049ab0af52b5b87fccbfb839b81f8e590f64b0e868ea852.png" />
+<img alt="_images/3797a736138856c7d8f95f1c864d487e3c182a25ce16f0bdb5e71084eabbe762.png" src="_images/3797a736138856c7d8f95f1c864d487e3c182a25ce16f0bdb5e71084eabbe762.png" />
+<img alt="_images/01269ee0701234d9b5bed6dd1303418e36fae437bc548c6cf5190dfe5693c20c.png" src="_images/01269ee0701234d9b5bed6dd1303418e36fae437bc548c6cf5190dfe5693c20c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_slopes_abs_sum</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">finished_slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">&quot;abs_sum&quot;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+        <span class="n">finished_slopes_abs_sum</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">1e-6</span><span class="p">))</span>
+<span class="n">finished_slopes_abs_sum</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">finished_slopes_abs_sum</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">finished_slopes_abs_sum</span><span class="p">,</span> <span class="n">corner</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\Cyril\anaconda3\envs\DLbiomed\lib\site-packages\seaborn\axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x198eb56fa60&gt;
+</pre></div>
+</div>
+<img alt="_images/2b179e829cd0dadd2b542b974937bf97ef1782d4f8cf95eed97ee3abf9644e90.png" src="_images/2b179e829cd0dadd2b542b974937bf97ef1782d4f8cf95eed97ee3abf9644e90.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slopes_unfin_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">slopes_unfin_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">slopes_unfin_df</span><span class="p">,</span> <span class="n">v</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">slopes_unfin_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>path_degree_slope_before</th>
+      <th>path_degree_slope_after</th>
+      <th>path_clustering_slope_before</th>
+      <th>path_clustering_slope_after</th>
+      <th>path_degree_centrality_slope_before</th>
+      <th>path_degree_centrality_slope_after</th>
+      <th>path_betweenness_slope_before</th>
+      <th>path_betweenness_slope_after</th>
+      <th>path_closeness_slope_before</th>
+      <th>path_closeness_slope_after</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-72.000</td>
+      <td>NaN</td>
+      <td>0.033226</td>
+      <td>NaN</td>
+      <td>-0.015683</td>
+      <td>NaN</td>
+      <td>-0.002369</td>
+      <td>NaN</td>
+      <td>-0.068352</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>176.000</td>
+      <td>22.700000</td>
+      <td>-0.046387</td>
+      <td>-0.001545</td>
+      <td>0.038336</td>
+      <td>0.004944</td>
+      <td>0.001522</td>
+      <td>0.000446</td>
+      <td>0.067403</td>
+      <td>0.003321</td>
+      <td>198.700</td>
+      <td>0.047933</td>
+      <td>0.043280</td>
+      <td>0.001968</td>
+      <td>0.070723</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>58.500000</td>
+      <td>NaN</td>
+      <td>-0.003034</td>
+      <td>NaN</td>
+      <td>0.012742</td>
+      <td>NaN</td>
+      <td>0.001267</td>
+      <td>NaN</td>
+      <td>0.004994</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>19656</th>
+      <td>NaN</td>
+      <td>-15.350000</td>
+      <td>NaN</td>
+      <td>-0.003174</td>
+      <td>NaN</td>
+      <td>-0.003343</td>
+      <td>NaN</td>
+      <td>-0.000127</td>
+      <td>NaN</td>
+      <td>-0.004025</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19657</th>
+      <td>4.125</td>
+      <td>-6.500000</td>
+      <td>-0.002172</td>
+      <td>0.014916</td>
+      <td>0.000898</td>
+      <td>-0.001416</td>
+      <td>-0.000007</td>
+      <td>-0.000098</td>
+      <td>0.001818</td>
+      <td>0.014254</td>
+      <td>10.625</td>
+      <td>0.017088</td>
+      <td>0.002314</td>
+      <td>0.000105</td>
+      <td>0.016072</td>
+    </tr>
+    <tr>
+      <th>19658</th>
+      <td>20.500</td>
+      <td>NaN</td>
+      <td>-0.026951</td>
+      <td>NaN</td>
+      <td>0.004465</td>
+      <td>NaN</td>
+      <td>0.000180</td>
+      <td>NaN</td>
+      <td>0.044126</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19659</th>
+      <td>NaN</td>
+      <td>-421.500000</td>
+      <td>NaN</td>
+      <td>0.128218</td>
+      <td>NaN</td>
+      <td>-0.091810</td>
+      <td>NaN</td>
+      <td>-0.007611</td>
+      <td>NaN</td>
+      <td>-0.089214</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19660</th>
+      <td>NaN</td>
+      <td>0.666667</td>
+      <td>NaN</td>
+      <td>-0.012383</td>
+      <td>NaN</td>
+      <td>0.000145</td>
+      <td>NaN</td>
+      <td>0.000500</td>
+      <td>NaN</td>
+      <td>-0.000780</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>19661 rows × 15 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paths_unfinised_modif</span> <span class="o">=</span> <span class="n">unfinished_paths</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">paths_unfinised_modif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">paths_unfinised_modif</span><span class="p">,</span> <span class="n">slopes_unfin_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">paths_unfinised_modif</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>target</th>
+      <th>type</th>
+      <th>path_degree_slope_before</th>
+      <th>path_degree_slope_after</th>
+      <th>path_clustering_slope_before</th>
+      <th>...</th>
+      <th>path_degree_centrality_slope_after</th>
+      <th>path_betweenness_slope_before</th>
+      <th>path_betweenness_slope_after</th>
+      <th>path_closeness_slope_before</th>
+      <th>path_closeness_slope_after</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>2b015fb8181c48f2</td>
+      <td>2011-02-07 15:00:19</td>
+      <td>1818</td>
+      <td>[Malawi, Democracy, Alexander_the_Great]</td>
+      <td>First_Crusade</td>
+      <td>timeout</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>53a53bc244e08a6a</td>
+      <td>2011-02-07 17:18:25</td>
+      <td>1808</td>
+      <td>[Paraguay, Bolivia]</td>
+      <td>Mount_St._Helens</td>
+      <td>timeout</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5</td>
+      <td>131600803df4895e</td>
+      <td>2011-02-07 17:42:37</td>
+      <td>2009</td>
+      <td>[Agriculture, History_of_the_world, China, Yan...</td>
+      <td>Grand_Canal_of_China</td>
+      <td>timeout</td>
+      <td>-72.000</td>
+      <td>NaN</td>
+      <td>0.033226</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>-0.002369</td>
+      <td>NaN</td>
+      <td>-0.068352</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6</td>
+      <td>486bb79910fe9dd2</td>
+      <td>2011-02-07 18:01:00</td>
+      <td>1932</td>
+      <td>[Mind, Christianity, Europe, Renaissance, Anci...</td>
+      <td>Scouting</td>
+      <td>timeout</td>
+      <td>176.000</td>
+      <td>22.700000</td>
+      <td>-0.046387</td>
+      <td>...</td>
+      <td>0.004944</td>
+      <td>0.001522</td>
+      <td>0.000446</td>
+      <td>0.067403</td>
+      <td>0.003321</td>
+      <td>198.700</td>
+      <td>0.047933</td>
+      <td>0.043280</td>
+      <td>0.001968</td>
+      <td>0.070723</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7</td>
+      <td>6d136e371e42474f</td>
+      <td>2011-02-07 18:07:50</td>
+      <td>175</td>
+      <td>[4-2-0, United_States, Agriculture, Sugar, Aus...</td>
+      <td>Cane_Toad</td>
+      <td>restart</td>
+      <td>NaN</td>
+      <td>58.500000</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.012742</td>
+      <td>NaN</td>
+      <td>0.001267</td>
+      <td>NaN</td>
+      <td>0.004994</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>19656</th>
+      <td>24869</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:00:12</td>
+      <td>182</td>
+      <td>[Turks_and_Caicos_Islands, United_States, Iraq...</td>
+      <td>Iraq_War</td>
+      <td>restart</td>
+      <td>NaN</td>
+      <td>-15.350000</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>-0.003343</td>
+      <td>NaN</td>
+      <td>-0.000127</td>
+      <td>NaN</td>
+      <td>-0.004025</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19657</th>
+      <td>24870</td>
+      <td>109ed71f571d86e9</td>
+      <td>2014-01-15 12:06:45</td>
+      <td>180</td>
+      <td>[Franz_Kafka, Tuberculosis, World_Health_Organ...</td>
+      <td>Cholera</td>
+      <td>restart</td>
+      <td>4.125</td>
+      <td>-6.500000</td>
+      <td>-0.002172</td>
+      <td>...</td>
+      <td>-0.001416</td>
+      <td>-0.000007</td>
+      <td>-0.000098</td>
+      <td>0.001818</td>
+      <td>0.014254</td>
+      <td>10.625</td>
+      <td>0.017088</td>
+      <td>0.002314</td>
+      <td>0.000105</td>
+      <td>0.016072</td>
+    </tr>
+    <tr>
+      <th>19658</th>
+      <td>24872</td>
+      <td>2e09a7224600a7cd</td>
+      <td>2014-01-15 15:06:40</td>
+      <td>1900</td>
+      <td>[Computer_programming, Linguistics, Culture, P...</td>
+      <td>The_Beatles</td>
+      <td>timeout</td>
+      <td>20.500</td>
+      <td>NaN</td>
+      <td>-0.026951</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>0.000180</td>
+      <td>NaN</td>
+      <td>0.044126</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19659</th>
+      <td>24873</td>
+      <td>60af9e2138051b96</td>
+      <td>2014-01-15 15:24:41</td>
+      <td>1903</td>
+      <td>[Jamaica, United_Kingdom, World_War_II, Battle...</td>
+      <td>Alan_Turing</td>
+      <td>timeout</td>
+      <td>NaN</td>
+      <td>-421.500000</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>-0.091810</td>
+      <td>NaN</td>
+      <td>-0.007611</td>
+      <td>NaN</td>
+      <td>-0.089214</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19660</th>
+      <td>24874</td>
+      <td>1cf0cbb3281049ab</td>
+      <td>2014-01-15 21:54:01</td>
+      <td>352</td>
+      <td>[Mark_Antony, Rome, Tennis, Hawk-Eye, Computer]</td>
+      <td>Feather</td>
+      <td>restart</td>
+      <td>NaN</td>
+      <td>0.666667</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.000145</td>
+      <td>NaN</td>
+      <td>0.000500</td>
+      <td>NaN</td>
+      <td>-0.000780</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>19661 rows × 22 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># paths_unfinised_modif.to_csv(&quot;paths_unfinised_modif.csv&quot;, index=False)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slopes_fin_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">finished_slopes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">slopes_fin_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">slopes_fin_df</span><span class="p">,</span> <span class="n">v</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">slopes_fin_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>path_degree_slope_before</th>
+      <th>path_degree_slope_after</th>
+      <th>path_clustering_slope_before</th>
+      <th>path_clustering_slope_after</th>
+      <th>path_degree_centrality_slope_before</th>
+      <th>path_degree_centrality_slope_after</th>
+      <th>path_betweenness_slope_before</th>
+      <th>path_betweenness_slope_after</th>
+      <th>path_closeness_slope_before</th>
+      <th>path_closeness_slope_after</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.305556</td>
+      <td>-164.500000</td>
+      <td>-0.001859</td>
+      <td>0.037566</td>
+      <td>0.003552</td>
+      <td>-0.035831</td>
+      <td>0.000658</td>
+      <td>-0.006049</td>
+      <td>0.003052</td>
+      <td>-0.048557</td>
+      <td>180.805556</td>
+      <td>0.039425</td>
+      <td>0.039383</td>
+      <td>0.006707</td>
+      <td>0.051609</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>990.000000</td>
+      <td>-117.888889</td>
+      <td>-0.080210</td>
+      <td>0.018173</td>
+      <td>0.215639</td>
+      <td>-0.025678</td>
+      <td>0.026482</td>
+      <td>-0.002998</td>
+      <td>0.166134</td>
+      <td>-0.027831</td>
+      <td>1107.888889</td>
+      <td>0.098383</td>
+      <td>0.241318</td>
+      <td>0.029480</td>
+      <td>0.193965</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>23.480000</td>
+      <td>-164.500000</td>
+      <td>-0.002677</td>
+      <td>0.037566</td>
+      <td>0.005114</td>
+      <td>-0.035831</td>
+      <td>0.000948</td>
+      <td>-0.006049</td>
+      <td>0.004395</td>
+      <td>-0.048557</td>
+      <td>187.980000</td>
+      <td>0.040243</td>
+      <td>0.040945</td>
+      <td>0.006996</td>
+      <td>0.052952</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>533.000000</td>
+      <td>-20.280000</td>
+      <td>-0.062775</td>
+      <td>0.001929</td>
+      <td>0.116097</td>
+      <td>-0.004417</td>
+      <td>0.006578</td>
+      <td>-0.000221</td>
+      <td>0.128796</td>
+      <td>-0.004730</td>
+      <td>553.280000</td>
+      <td>0.064705</td>
+      <td>0.120514</td>
+      <td>0.006798</td>
+      <td>0.133526</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51313</th>
+      <td>171.000000</td>
+      <td>-12.000000</td>
+      <td>-0.071107</td>
+      <td>0.027105</td>
+      <td>0.037247</td>
+      <td>-0.002614</td>
+      <td>0.002657</td>
+      <td>-0.000804</td>
+      <td>0.157917</td>
+      <td>-0.018885</td>
+      <td>183.000000</td>
+      <td>0.098212</td>
+      <td>0.039861</td>
+      <td>0.003460</td>
+      <td>0.176802</td>
+    </tr>
+    <tr>
+      <th>51314</th>
+      <td>48.111111</td>
+      <td>-25.375000</td>
+      <td>-0.009907</td>
+      <td>0.002080</td>
+      <td>0.010479</td>
+      <td>-0.005527</td>
+      <td>0.001647</td>
+      <td>-0.000915</td>
+      <td>0.023343</td>
+      <td>-0.008072</td>
+      <td>73.486111</td>
+      <td>0.011987</td>
+      <td>0.016007</td>
+      <td>0.002562</td>
+      <td>0.031415</td>
+    </tr>
+    <tr>
+      <th>51315</th>
+      <td>114.062500</td>
+      <td>-454.500000</td>
+      <td>-0.006783</td>
+      <td>0.113789</td>
+      <td>0.024845</td>
+      <td>-0.098998</td>
+      <td>0.005880</td>
+      <td>-0.023507</td>
+      <td>0.020834</td>
+      <td>-0.066499</td>
+      <td>568.562500</td>
+      <td>0.120572</td>
+      <td>0.123843</td>
+      <td>0.029388</td>
+      <td>0.087333</td>
+    </tr>
+    <tr>
+      <th>51316</th>
+      <td>451.000000</td>
+      <td>-1748.000000</td>
+      <td>-0.057506</td>
+      <td>0.104447</td>
+      <td>0.098236</td>
+      <td>-0.380745</td>
+      <td>0.023522</td>
+      <td>-0.093311</td>
+      <td>0.081910</td>
+      <td>-0.199357</td>
+      <td>2199.000000</td>
+      <td>0.161952</td>
+      <td>0.478981</td>
+      <td>0.116833</td>
+      <td>0.281266</td>
+    </tr>
+    <tr>
+      <th>51317</th>
+      <td>886.000000</td>
+      <td>-558.000000</td>
+      <td>-0.178825</td>
+      <td>0.023928</td>
+      <td>0.192986</td>
+      <td>-0.121542</td>
+      <td>0.019406</td>
+      <td>-0.016258</td>
+      <td>0.240087</td>
+      <td>-0.069404</td>
+      <td>1444.000000</td>
+      <td>0.202752</td>
+      <td>0.314528</td>
+      <td>0.035664</td>
+      <td>0.309492</td>
+    </tr>
+  </tbody>
+</table>
+<p>51318 rows × 15 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finished_paths_modif</span> <span class="o">=</span> <span class="n">finished_paths</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">finished_paths_modif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">finished_paths_modif</span><span class="p">,</span> <span class="n">slopes_fin_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">finished_paths_modif</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hashedIpAddress</th>
+      <th>timestamp</th>
+      <th>durationInSec</th>
+      <th>path</th>
+      <th>rating</th>
+      <th>path_degree_slope_before</th>
+      <th>path_degree_slope_after</th>
+      <th>path_clustering_slope_before</th>
+      <th>path_clustering_slope_after</th>
+      <th>path_degree_centrality_slope_before</th>
+      <th>path_degree_centrality_slope_after</th>
+      <th>path_betweenness_slope_before</th>
+      <th>path_betweenness_slope_after</th>
+      <th>path_closeness_slope_before</th>
+      <th>path_closeness_slope_after</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6a3701d319fc3754</td>
+      <td>2011-02-15 03:26:49</td>
+      <td>166</td>
+      <td>[14th_century, 15th_century, 16th_century, Pac...</td>
+      <td>NaN</td>
+      <td>16.305556</td>
+      <td>-164.500000</td>
+      <td>-0.001859</td>
+      <td>0.037566</td>
+      <td>0.003552</td>
+      <td>-0.035831</td>
+      <td>0.000658</td>
+      <td>-0.006049</td>
+      <td>0.003052</td>
+      <td>-0.048557</td>
+      <td>180.805556</td>
+      <td>0.039425</td>
+      <td>0.039383</td>
+      <td>0.006707</td>
+      <td>0.051609</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3824310e536af032</td>
+      <td>2012-08-12 06:36:52</td>
+      <td>88</td>
+      <td>[14th_century, Europe, Africa, Atlantic_slave_...</td>
+      <td>3.0</td>
+      <td>990.000000</td>
+      <td>-117.888889</td>
+      <td>-0.080210</td>
+      <td>0.018173</td>
+      <td>0.215639</td>
+      <td>-0.025678</td>
+      <td>0.026482</td>
+      <td>-0.002998</td>
+      <td>0.166134</td>
+      <td>-0.027831</td>
+      <td>1107.888889</td>
+      <td>0.098383</td>
+      <td>0.241318</td>
+      <td>0.029480</td>
+      <td>0.193965</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>415612e93584d30e</td>
+      <td>2012-10-03 21:10:40</td>
+      <td>138</td>
+      <td>[14th_century, Niger, Nigeria, British_Empire,...</td>
+      <td>NaN</td>
+      <td>23.480000</td>
+      <td>-164.500000</td>
+      <td>-0.002677</td>
+      <td>0.037566</td>
+      <td>0.005114</td>
+      <td>-0.035831</td>
+      <td>0.000948</td>
+      <td>-0.006049</td>
+      <td>0.004395</td>
+      <td>-0.048557</td>
+      <td>187.980000</td>
+      <td>0.040243</td>
+      <td>0.040945</td>
+      <td>0.006996</td>
+      <td>0.052952</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>64dd5cd342e3780c</td>
+      <td>2010-02-08 07:25:25</td>
+      <td>37</td>
+      <td>[14th_century, Renaissance, Ancient_Greece, Gr...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>015245d773376aab</td>
+      <td>2013-04-23 15:27:08</td>
+      <td>175</td>
+      <td>[14th_century, Italy, Roman_Catholic_Church, H...</td>
+      <td>3.0</td>
+      <td>533.000000</td>
+      <td>-20.280000</td>
+      <td>-0.062775</td>
+      <td>0.001929</td>
+      <td>0.116097</td>
+      <td>-0.004417</td>
+      <td>0.006578</td>
+      <td>-0.000221</td>
+      <td>0.128796</td>
+      <td>-0.004730</td>
+      <td>553.280000</td>
+      <td>0.064705</td>
+      <td>0.120514</td>
+      <td>0.006798</td>
+      <td>0.133526</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51313</th>
+      <td>15a13a1d66ef5456</td>
+      <td>2012-10-03 02:23:35</td>
+      <td>66</td>
+      <td>[Yagan, Ancient_Egypt, Civilization]</td>
+      <td>NaN</td>
+      <td>171.000000</td>
+      <td>-12.000000</td>
+      <td>-0.071107</td>
+      <td>0.027105</td>
+      <td>0.037247</td>
+      <td>-0.002614</td>
+      <td>0.002657</td>
+      <td>-0.000804</td>
+      <td>0.157917</td>
+      <td>-0.018885</td>
+      <td>183.000000</td>
+      <td>0.098212</td>
+      <td>0.039861</td>
+      <td>0.003460</td>
+      <td>0.176802</td>
+    </tr>
+    <tr>
+      <th>51314</th>
+      <td>2ef7ac844cefda58</td>
+      <td>2011-03-16 05:42:18</td>
+      <td>165</td>
+      <td>[Yagan, Folklore, Brothers_Grimm, &lt;, 19th_cent...</td>
+      <td>3.0</td>
+      <td>48.111111</td>
+      <td>-25.375000</td>
+      <td>-0.009907</td>
+      <td>0.002080</td>
+      <td>0.010479</td>
+      <td>-0.005527</td>
+      <td>0.001647</td>
+      <td>-0.000915</td>
+      <td>0.023343</td>
+      <td>-0.008072</td>
+      <td>73.486111</td>
+      <td>0.011987</td>
+      <td>0.016007</td>
+      <td>0.002562</td>
+      <td>0.031415</td>
+    </tr>
+    <tr>
+      <th>51315</th>
+      <td>12863abb7887f890</td>
+      <td>2013-11-22 04:42:52</td>
+      <td>228</td>
+      <td>[Yagan, Australia, England, France, United_Sta...</td>
+      <td>NaN</td>
+      <td>114.062500</td>
+      <td>-454.500000</td>
+      <td>-0.006783</td>
+      <td>0.113789</td>
+      <td>0.024845</td>
+      <td>-0.098998</td>
+      <td>0.005880</td>
+      <td>-0.023507</td>
+      <td>0.020834</td>
+      <td>-0.066499</td>
+      <td>568.562500</td>
+      <td>0.120572</td>
+      <td>0.123843</td>
+      <td>0.029388</td>
+      <td>0.087333</td>
+    </tr>
+    <tr>
+      <th>51316</th>
+      <td>19f8284371753362</td>
+      <td>2011-02-27 07:42:47</td>
+      <td>56</td>
+      <td>[Yarralumla%2C_Australian_Capital_Territory, A...</td>
+      <td>1.0</td>
+      <td>451.000000</td>
+      <td>-1748.000000</td>
+      <td>-0.057506</td>
+      <td>0.104447</td>
+      <td>0.098236</td>
+      <td>-0.380745</td>
+      <td>0.023522</td>
+      <td>-0.093311</td>
+      <td>0.081910</td>
+      <td>-0.199357</td>
+      <td>2199.000000</td>
+      <td>0.161952</td>
+      <td>0.478981</td>
+      <td>0.116833</td>
+      <td>0.281266</td>
+    </tr>
+    <tr>
+      <th>51317</th>
+      <td>24b84602179de377</td>
+      <td>2011-10-09 01:11:41</td>
+      <td>30</td>
+      <td>[Ziad_Jarrah, Germany, Jew]</td>
+      <td>NaN</td>
+      <td>886.000000</td>
+      <td>-558.000000</td>
+      <td>-0.178825</td>
+      <td>0.023928</td>
+      <td>0.192986</td>
+      <td>-0.121542</td>
+      <td>0.019406</td>
+      <td>-0.016258</td>
+      <td>0.240087</td>
+      <td>-0.069404</td>
+      <td>1444.000000</td>
+      <td>0.202752</td>
+      <td>0.314528</td>
+      <td>0.035664</td>
+      <td>0.309492</td>
+    </tr>
+  </tbody>
+</table>
+<p>51318 rows × 20 columns</p>
+</div></div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cyril, David, Laurent, Mathilde, Yves
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
