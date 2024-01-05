@@ -48,13 +48,13 @@ To achieve this goal we came up with 10 different features that can either tell 
 
 ## Clustering code and figures
 
-You will find our code in the following sections:
+You will find our code organized in the following sections:
 
-- {ref}`section:data-loading` : Data loading and pre-processing (features are already computed, we simply analyze and apply transforms to them)
-- {ref}`section:leiden-clustering` : Leiden clustering (without timeouts, see before last section for details)
-- {ref}`section:clustering-validation` : Assessement of the clustering robustness
-- {ref}`section:clustering-timeouts` : Leiden clustering with timeouts
-- {ref}`section:hierarchical-clustering` : Hierarchical clustering and other alternatives that were tested
+- Data loading and pre-processing (features are already computed, we simply analyze and apply transforms to them)
+- Leiden clustering (without timeouts, see before last section for details)
+- Assessement of the clustering robustness
+- Leiden clustering with timeouts
+- Hierarchical clustering and other alternatives that were tested
 
 
 ## Group contributions
